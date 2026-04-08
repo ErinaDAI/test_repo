@@ -1,0 +1,10 @@
+# Exported from:        http://localhost:5516/
+# Release version:      26.1.0-322.130
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Notifications.yaml
+  - Template_task_showcase.yaml

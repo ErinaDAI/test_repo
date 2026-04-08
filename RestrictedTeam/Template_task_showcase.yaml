@@ -1,0 +1,58 @@
+# Exported from:        http://localhost:5516/
+# Release version:      26.1.0-322.130
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Restricted Team
+spec:
+- template: Task Showcase
+  scheduledStartDate: 2026-04-07T03:30:00Z
+  phases:
+  - phase: showcase phase
+    tasks:
+    - name: verify test case
+      type: xlrelease.Task
+      owner: smiletester
+    - name: get user input
+      type: xlrelease.UserInputTask
+      description: Please enter the required information below.
+      owner: admin
+      variables:
+      - user_comment
+    - name: execute code
+      type: xlrelease.GroovyScriptTask
+      ignoreScriptVariableInterpolation: true
+      script: println "Automated task executed successfully"
+    - name: manual tasks
+      type: xlrelease.Task
+      owner: admin
+    - name: notify teams
+      type: xlrelease.NotificationTask
+      owner: admin
+      addresses:
+      - admin@gmail.com
+      subject: To notify team
+      body: This email is to notify that the manual tasks are done.
+      cc:
+      - erina.smiles@digital.ai
+      bcc:
+      - smiledeveloper@gmail.com
+      replyTo: admin@gmail.com
+      from: erina.smiles@digital.ai
+      senderUsername: erina.smiles@digital.ai
+      priority: High
+    color: "#3d6c9e"
+  tags:
+  - showcase
+  variables:
+  - type: xlrelease.StringVariable
+    key: user_comment
+    label: User Comment
+    description: User input provided during release execution
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Task_Showcase_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
