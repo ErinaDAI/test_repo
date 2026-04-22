@@ -1,0 +1,28 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Folder A/Folder B/Folder C
+spec:
+- template: testing
+  scheduledStartDate: 2026-04-22T09:00:00+05:30
+  phases:
+  - phase: assuring quality
+    tasks:
+    - name: code review
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: Release 1
+      releaseTags:
+      - release1
+      template: Folder A/Folder B/Development
+      folder: Folder A/Folder B
+    color: "#3d6c9e"
+  tags:
+  - testing
+  scriptUserPassword: !value "xlrelease_Release_testing_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
