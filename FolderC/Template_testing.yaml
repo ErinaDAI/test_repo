@@ -18,8 +18,8 @@ spec:
       newReleaseTitle: Release 1
       releaseTags:
       - release1
-      template: Folder A/Folder B/Development
-      folder: Folder A/Folder B
+      template: OutScope-Folder/Nested-OutScope-Folder/OutScope_Template
+      folder: OutScope-Folder/Nested-OutScope-Folder
     color: "#3d6c9e"
   tags:
   - testing
