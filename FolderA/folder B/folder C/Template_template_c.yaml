@@ -11,13 +11,14 @@ spec:
 - template: Template C
   scheduledStartDate: 2026-05-04T09:00:00+05:30
   phases:
-  - phase: New Phase
+  - phase: phase 1
     tasks:
     - name: creating release
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: release C test
       template: ./folder D/Template D
       folder: ./folder D
+    color: "#3d6c9e"
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
   riskProfile: Default risk profile
