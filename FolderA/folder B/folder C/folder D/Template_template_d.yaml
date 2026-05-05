@@ -1,17 +1,19 @@
 # Exported from:        http://erina:5516/
-# Release version:      26.3.0-SNAPSHOT
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Tue May 05 23:02:52 IST 2026
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: folder B/folder C/folder D
-  home: Root/folder A/folder B/folder C/folder D
+  path: folder A/folder B/folder C/folder D
+  home: root%2Ffolder A/folder A/folder B/folder C/folder D
 spec:
 - template: Template D
-  scheduledStartDate: 2026-05-04T09:00:00+05:30
+  scheduledStartDate: 2026-05-05T09:00:00+05:30
   phases:
-  - phase: New Phase
+  - phase: phase 3
+    color: "#3d6c9e"
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_D_scriptUserPassword"
   riskProfile: Default risk profile
