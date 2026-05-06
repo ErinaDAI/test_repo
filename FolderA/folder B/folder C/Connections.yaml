@@ -6,12 +6,12 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: folder A
-  home: root%2Ffolder A/folder A
+  path: folder A/folder B/folder C
+  home: root%2Ffolder A/folder A/folder B/folder C
 spec:
-- name: test1.1
+- name: template_C1_5
   type: git.Repository
   url: https://github.com/ErinaDAI/test_repo
   username: ErinaDAI
-  password: !value "git_Repository_test1_1_password"
+  password: !value "git_Repository_template_C1_5_password"
   gitProvider: GITHUB

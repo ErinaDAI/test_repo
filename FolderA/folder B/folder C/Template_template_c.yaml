@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Wed May 06 10:09:56 IST 2026
+# Date created:         Wed May 06 11:20:18 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -27,6 +27,16 @@ spec:
     - name: "1_4"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_1_4
+      template: root/folder A2/Template A2
+      folder: root/folder A2
+    - name: "1_7"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_7
+      template: root/folder A/folder B/Template B
+      folder: root/folder A/folder B
+    - name: "1_8"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_8
       template: root/folder A2/Template A2
       folder: root/folder A2
     color: "#3d6c9e"

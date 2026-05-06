@@ -6,21 +6,21 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: folder A
-  home: root%2Ffolder A/folder A
+  path: folder A/folder B
+  home: root%2Ffolder A/folder A/folder B
 spec:
-- template: templateA_parent
-  scheduledStartDate: 2026-05-05T09:00:00+05:30
+- template: templateB_crt
+  scheduledStartDate: 2026-05-06T09:00:00+05:30
   phases:
-  - phase: Phase 1
+  - phase: phase B1
     tasks:
-    - name: "1_1"
+    - name: "1_9"
       type: xlrelease.CreateReleaseTask
-      newReleaseTitle: CRT_test
+      newReleaseTitle: crt_1_9
       template: root/folder A/folder B/Template B
       folder: root/folder A/folder B
     color: "#3d6c9e"
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_templateA_parent_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_templateB_crt_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
