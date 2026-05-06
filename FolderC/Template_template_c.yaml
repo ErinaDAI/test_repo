@@ -1,0 +1,46 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Wed May 06 11:14:02 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: folder C
+  home: root%2Ffolder A%2Ffolder B%2Ffolder C/folder C
+spec:
+- template: Template C
+  scheduledStartDate: 2026-05-05T09:00:00+05:30
+  phases:
+  - phase: phase 2
+    tasks:
+    - name: C crt
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: CRT test 1
+      template: root/folder A/folder B/Template B
+      folder: root/folder A/folder B
+    - name: "1_3"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_3
+      template: root/folder A/folder B2/Template B2
+      folder: root/folder A/folder B2
+    - name: "1_4"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_4
+      template: root/folder A2/Template A2
+      folder: root/folder A2
+    - name: "1_7"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_7
+      template: root/folder A/folder B/Template B
+      folder: root/folder A/folder B
+    - name: "1_8"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_8
+      template: root/folder A2/Template A2
+      folder: root/folder A2
+    color: "#3d6c9e"
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
