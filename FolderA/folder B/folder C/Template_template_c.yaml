@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Wed May 06 09:57:51 IST 2026
+# Date created:         Wed May 06 10:08:48 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -24,6 +24,11 @@ spec:
       newReleaseTitle: crt_1_3
       template: root/folder A/folder B2/Template B2
       folder: root/folder A/folder B2
+    - name: "1_4"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_4
+      template: root/folder A2/Template A2
+      folder: root/folder A2
     color: "#3d6c9e"
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
