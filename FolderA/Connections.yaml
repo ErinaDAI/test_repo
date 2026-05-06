@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Wed May 06 00:49:50 IST 2026
+# Date created:         Wed May 06 09:57:51 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -9,9 +9,9 @@ metadata:
   path: folder A
   home: root%2Ffolder A/folder A
 spec:
-- name: "1.2"
+- name: test1.1
   type: git.Repository
   url: https://github.com/ErinaDAI/test_repo
   username: ErinaDAI
-  password: !value "git_Repository_1_2_password"
+  password: !value "git_Repository_test1_1_password"
   gitProvider: GITHUB
