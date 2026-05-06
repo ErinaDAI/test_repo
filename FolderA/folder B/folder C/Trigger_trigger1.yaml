@@ -1,0 +1,22 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Wed May 06 15:43:31 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: folder A/folder B/folder C
+  home: root%2Ffolder A/folder A/folder B/folder C
+spec:
+- name: Trigger1
+  type: time.Schedule
+  releaseTitle: trigger3.1
+  variables:
+  - type: xlrelease.StringVariable
+    key: templateVar
+    value: FolderA/FolderB/templateB
+  template: Template C
+  releaseFolder: root/folder A/folder B
+  periodicity: 0 * * * * *
+  triggerTime: 2026-05-06T15:43:00.133000
