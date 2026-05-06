@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Wed May 06 12:41:15 IST 2026
+# Date created:         Wed May 06 12:55:43 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -90,7 +90,15 @@ spec:
       col: 1
       filters:
       - type: xlrelease.FolderFilter
-        folder: root/folder A2
+        folder: root/folder A/folder B/folder C
+      - type: xlrelease.DateFilter
+    - name: Deployment activity
+      type: deployment.DeploymentsActivityTile
+      row: 5
+      col: 2
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: root/folder A/folder B
       - type: xlrelease.DateFilter
   riskProfile: Default risk profile
   author: admin
