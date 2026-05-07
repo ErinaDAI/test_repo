@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Thu May 07 10:32:00 IST 2026
+# Date created:         Thu May 07 12:25:42 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -11,12 +11,13 @@ metadata:
 spec:
 - template: Template_erinaC
   scheduledStartDate: 2026-05-07T09:00:00+05:30
+  dueDate: 2026-05-07T10:00:00+05:30
   phases:
   - phase: phase C
     tasks:
     - name: crt_test
       type: xlrelease.CreateReleaseTask
-      folder: ./
+      folder: Erina A
     - name: script_test
       type: xlrelease.GroovyScriptTask
       owner: admin
@@ -30,6 +31,29 @@ spec:
       script: |-
         println("Hello Erina")
         println("Path FolderA2")
+    - name: "1_2"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_2
+      folder: Erina A/Erina B
+    - name: "5_4_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_4
+      template: Erina A2/template_erinaA2
+      folder: Erina A2
+    - name: "5_5_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_1
+      folder: Erina A/Erina B
+    - name: "5_5_2"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_2
+      template: Erina A2/template_erinaA2
+      folder: Erina A2
+    - name: "5_6_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_6_1
+      template: Erina A/Erina B/Template Erina B
+      folder: Erina A/Erina B
     color: "#3d6c9e"
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_erinaC_scriptUserPassword"
