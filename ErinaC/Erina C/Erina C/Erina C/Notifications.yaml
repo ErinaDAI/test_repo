@@ -1,13 +1,13 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Thu May 07 16:15:34 IST 2026
+# Date created:         Thu May 07 16:15:33 IST 2026
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: Erina C/Erina C/Erina C/Erina D
-  home: Erina A%2FErina B%2FErina C/Erina C/Erina C/Erina C/Erina D
+  path: Erina C/Erina C/Erina C/Erina C
+  home: Erina A%2FErina B%2FErina C/Erina C/Erina C/Erina C/Erina C
 spec:
 - notifications:
   - notification: TASK_OVERDUE
