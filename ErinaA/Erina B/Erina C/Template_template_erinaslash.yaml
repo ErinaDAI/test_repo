@@ -6,16 +6,19 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: Erina B/Erina C/Erina D
-  home: Erina A/Erina B/Erina C/Erina D
+  path: Erina B/Erina C
+  home: Erina A/Erina B/Erina C
 spec:
-- template: Template_erinaD
+- template: Template/erinaSlash
   scheduledStartDate: 2026-05-07T09:00:00+05:30
-  dueDate: 2026-05-07T10:00:00+05:30
   phases:
-  - phase: phase D
+  - phase: phase C slash
+    tasks:
+    - name: slashing
+      type: xlrelease.Task
+      owner: admin
     color: "#3d6c9e"
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template_erinaD_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaSlash_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
