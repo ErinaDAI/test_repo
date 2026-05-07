@@ -7,5 +7,7 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
+  - Connections.yaml
   - Notifications.yaml
-  - Template_template_erina_a.yaml
+  - Template_template_erinac.yaml
+  - Template_template_erinac2.yaml
