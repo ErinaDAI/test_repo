@@ -1,0 +1,37 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Thu May 07 10:32:00 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Erina C
+  home: Erina A%2FErina B%2FErina C/Erina C
+spec:
+- template: Template_erinaC
+  scheduledStartDate: 2026-05-07T09:00:00+05:30
+  phases:
+  - phase: phase C
+    tasks:
+    - name: crt_test
+      type: xlrelease.CreateReleaseTask
+      folder: ./
+    - name: script_test
+      type: xlrelease.GroovyScriptTask
+      owner: admin
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        println("Hello Erina")
+        println("Path FolderA/FolderB/templateB")
+    - name: "4_3"
+      type: xlrelease.GroovyScriptTask
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        println("Hello Erina")
+        println("Path FolderA2")
+    color: "#3d6c9e"
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaC_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
