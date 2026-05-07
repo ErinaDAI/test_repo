@@ -1,0 +1,23 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Thu May 07 16:31:56 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: test C
+  home: test A%2Ftest B%2Ftest C/test C
+spec:
+- template: template c
+  scheduledStartDate: 2026-05-07T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: crt_test
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt
+      template: test A/test B/template B
+      folder: test A/test B
+  riskProfile: Default risk profile
+  author: admin
