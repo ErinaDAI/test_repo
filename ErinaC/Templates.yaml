@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Thu May 07 12:35:04 IST 2026
+# Date created:         Thu May 07 14:56:21 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -43,25 +43,37 @@ spec:
     - name: "5_5_1"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_5_5_1
-      template: Erina A/Erina B/Template Erina B
       folder: Erina A/Erina B
     - name: "5_5_2"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_5_5_2
       template: Erina A2/template_erinaA2
       folder: Erina A2
-    - name: "5_6_1"
+    - name: "5_7_1"
       type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_6_1
-      template: Erina A/Erina B/Template Erina B
-      folder: Erina A/Erina B
-    - name: "5_6_2"
+      newReleaseTitle: crt_7_1
+      template: Erina A/Erina B/Erina C/Template_erinaC2
+      folder: Erina A/Erina B/Erina C
+    - name: "5_8_1"
       type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_6_2
-      template: Erina A2/template_erinaA2
-      folder: Erina A2
+      newReleaseTitle: crt_5_8_1
+      template: Erina A/Erina B2/template_erinaB2
+      folder: Erina A/Erina B2
     color: "#3d6c9e"
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_erinaC_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
+- template: Template_erinaC2
+  scheduledStartDate: 2026-05-07T09:00:00+05:30
+  dueDate: 2026-05-07T10:00:00+05:30
+  phases:
+  - phase: phase C2
+    tasks:
+    - name: c2
+      type: xlrelease.Task
+    color: "#3d6c9e"
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaC2_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin

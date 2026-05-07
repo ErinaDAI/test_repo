@@ -6,8 +6,8 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: Erina C/Erina C
-  home: Erina A%2FErina B%2FErina C/Erina C/Erina C
+  path: Erina C/Erina C/Erina C
+  home: Erina A%2FErina B%2FErina C/Erina C/Erina C/Erina C
 spec:
 - notifications:
   - notification: TASK_OVERDUE
