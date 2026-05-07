@@ -1,0 +1,21 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Thu May 07 11:47:07 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Erina B/Erina C/Erina D
+  home: Erina A/Erina B/Erina C/Erina D
+spec:
+- template: Template_erinaD
+  scheduledStartDate: 2026-05-07T09:00:00+05:30
+  dueDate: 2026-05-07T10:00:00+05:30
+  phases:
+  - phase: phase D
+    color: "#3d6c9e"
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaD_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
