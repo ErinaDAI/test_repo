@@ -1,0 +1,17 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Thu May 07 13:17:39 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Erina B/Erina C
+  home: Erina A%2FErina B/Erina B/Erina C
+spec:
+- name: 4_3_test
+  type: git.Repository
+  url: https://github.com/ErinaDAI/test_repo
+  username: ErinaDAI
+  password: !value "git_Repository_4_3_test_password"
+  gitProvider: GITHUB

@@ -1,0 +1,13 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Thu May 07 13:17:39 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Connections.yaml
+  - Notifications.yaml
+  - Template_template_erinac.yaml
+  - Template_template_erinac2.yaml

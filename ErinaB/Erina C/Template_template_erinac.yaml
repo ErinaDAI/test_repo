@@ -1,0 +1,66 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Thu May 07 13:17:39 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Erina B/Erina C
+  home: Erina A%2FErina B/Erina B/Erina C
+spec:
+- template: Template_erinaC
+  scheduledStartDate: 2026-05-07T09:00:00+05:30
+  dueDate: 2026-05-07T10:00:00+05:30
+  phases:
+  - phase: phase C
+    tasks:
+    - name: crt_test
+      type: xlrelease.CreateReleaseTask
+      folder: Erina A
+    - name: script_test
+      type: xlrelease.GroovyScriptTask
+      owner: admin
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        println("Hello Erina")
+        println("Path FolderA/FolderB/templateB")
+    - name: "4_3"
+      type: xlrelease.GroovyScriptTask
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        println("Hello Erina")
+        println("Path FolderA2")
+    - name: "1_2"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_2
+      folder: Erina A/Erina B
+    - name: "5_4_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_4
+      template: Erina A2/template_erinaA2
+      folder: Erina A2
+    - name: "5_5_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_1
+      folder: Erina A/Erina B
+    - name: "5_5_2"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_2
+      template: Erina A2/template_erinaA2
+      folder: Erina A2
+    - name: "5_7_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_7_1
+      template: Erina A/Erina B/Erina C/Template_erinaC2
+      folder: Erina A/Erina B/Erina C
+    - name: "5_8_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_8_1
+      template: Erina A/Erina B2/template_erinaB2
+      folder: Erina A/Erina B2
+    color: "#3d6c9e"
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaC_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
