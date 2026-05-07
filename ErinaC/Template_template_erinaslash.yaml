@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Thu May 07 14:57:03 IST 2026
+# Date created:         Thu May 07 16:05:20 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -9,16 +9,16 @@ metadata:
   path: Erina C
   home: Erina A%2FErina B%2FErina C/Erina C
 spec:
-- template: Template_erinaC2
+- template: Template/erinaSlash
   scheduledStartDate: 2026-05-07T09:00:00+05:30
-  dueDate: 2026-05-07T10:00:00+05:30
   phases:
-  - phase: phase C2
+  - phase: phase C slash
     tasks:
-    - name: c2
+    - name: slashing
       type: xlrelease.Task
+      owner: admin
     color: "#3d6c9e"
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template_erinaC2_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaSlash_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
