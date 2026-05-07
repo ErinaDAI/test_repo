@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Thu May 07 15:11:24 IST 2026
+# Date created:         Thu May 07 15:22:17 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -52,7 +52,6 @@ spec:
     - name: "5_7_1"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_7_1
-      template: ./Template_erinaC2
       folder: ./
     - name: "5_8_1"
       type: xlrelease.CreateReleaseTask
@@ -63,6 +62,10 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_8_1
       template: ./Template\/erinaSlash
+      folder: ./
+    - name: "8.3"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_8_3
       folder: ./
     color: "#3d6c9e"
   scriptUsername: admin
