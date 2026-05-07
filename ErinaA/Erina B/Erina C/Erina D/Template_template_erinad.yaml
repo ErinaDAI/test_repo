@@ -6,15 +6,15 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: Erina B
-  home: Erina A/Erina B
+  path: Erina B/Erina C/Erina D
+  home: Erina A/Erina B/Erina C/Erina D
 spec:
-- template: Template Erina B
-  scheduledStartDate: 2026-05-06T09:00:00+05:30
+- template: Template_erinaD
+  scheduledStartDate: 2026-05-07T09:00:00+05:30
   phases:
-  - phase: erina2
+  - phase: phase D
     color: "#3d6c9e"
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template_Erina_B_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaD_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
