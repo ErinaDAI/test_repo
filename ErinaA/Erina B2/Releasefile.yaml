@@ -8,4 +8,5 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
-  - Template_template_erina_a.yaml
+  - Template_template_erina_b.yaml
+  - Template_template_erinab2.yaml

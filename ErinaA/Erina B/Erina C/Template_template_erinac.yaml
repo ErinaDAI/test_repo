@@ -1,0 +1,98 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Fri May 08 20:23:51 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Erina B/Erina C
+  home: Erina A/Erina B/Erina C
+spec:
+- template: Template_erinaC
+  scheduledStartDate: 2026-05-07T09:00:00+05:30
+  dueDate: 2026-05-07T10:00:00+05:30
+  phases:
+  - phase: phase C
+    tasks:
+    - name: crt_test
+      type: xlrelease.CreateReleaseTask
+      folder: ../..
+    - name: script_test
+      type: xlrelease.GroovyScriptTask
+      owner: admin
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        println("Hello Erina")
+        println("Path FolderA/FolderB/templateB")
+    - name: "4_3"
+      type: xlrelease.GroovyScriptTask
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        println("Hello Erina")
+        println("Path FolderA2")
+    - name: "1_2"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_2
+      template: ../../Erina B2/Template Erina B
+      folder: ..
+    - name: "5_4_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_4
+      template: Erina A2/template_erinaA2
+      folder: Erina A2
+    - name: "5_5_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_1
+      folder: ..
+    - name: "5_5_2"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_2
+      template: Erina A2/template_erinaA2
+      folder: Erina A2
+    - name: "5_7_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_7_1
+      folder: ./
+    - name: "5_8_1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_8_1
+      template: ../../Erina B2/template_erinaB2
+      folder: ../../Erina B2
+    - name: "8.1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_8_1
+      template: ./Template\/erinaSlash
+      folder: ./
+    - name: "8.3"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_8_3
+      folder: ./
+    - name: "8.6"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_8_6
+      template: ../../Erina B2/Template Erina B
+      folder: ..
+    - name: demo1
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt1
+      template: ../../Template Erina A
+      folder: ../..
+    - name: demo2
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt2
+      template: ../../Erina B2/template_erinaB2
+      folder: ../../Erina B2
+    - name: 4.2.1_check
+      type: xlrelease.GroovyScriptTask
+      ignoreScriptVariableInterpolation: true
+      script: "println(\"Template reference = ${refTemplate}\")"
+    color: "#3d6c9e"
+  variables:
+  - type: xlrelease.StringVariable
+    key: refTemplate
+    value: Erina B2/Template Erina B
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_erinaC_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
