@@ -8,15 +8,18 @@ metadata:
   path: Folder B
   home: Folder A/Folder B
 spec:
-- template: Template B
+- template: TemplateB_crt
   scheduledStartDate: 2026-05-09T09:00:00+05:30
   phases:
-  - phase: phase B
+  - phase: phase Bcrt
     tasks:
-    - name: New task
-      type: xlrelease.Task
+    - name: "1.9"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_9
+      template: ./Template B
+      folder: ./
     color: "#3d6c9e"
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template_B_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_TemplateB_crt_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
