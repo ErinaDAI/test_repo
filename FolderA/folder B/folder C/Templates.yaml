@@ -28,6 +28,20 @@ spec:
       newReleaseTitle: crt_1_4
       template: Folder A2/Template A2
       folder: Folder A2
+    - name: "1.5"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_5
+      template: ../Template B
+      folder: ..
+    - name: "1.6"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_6
+      template: ../../Folder B2/Template B2
+      folder: ../../Folder B2
+    - name: "1.7"
+      type: xlrelease.CreateReleaseTask
+      template: ../Template B
+      folder: ..
     color: "#3d6c9e"
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
