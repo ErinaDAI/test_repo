@@ -1,0 +1,19 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.1.2-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Folder B/Folder C
+  home: Folder A/Folder B/Folder C
+spec:
+- template: Template C
+  scheduledStartDate: 2026-05-09T09:00:00+05:30
+  phases:
+  - phase: phase C
+    color: "#3d6c9e"
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
