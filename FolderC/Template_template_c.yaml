@@ -1,88 +1,40 @@
 # Exported from:        http://erina:5516/
-# Release version:      25.3.5-SNAPSHOT
-# Date created:         Wed May 06 12:26:16 IST 2026
+# Release version:      26.1.2-SNAPSHOT
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: folder C
-  home: root%2Ffolder A%2Ffolder B%2Ffolder C/folder C
+  path: /
+  home: Folder A/Folder B/Folder C
 spec:
 - template: Template C
-  scheduledStartDate: 2026-05-05T09:00:00+05:30
+  scheduledStartDate: 2026-05-09T09:00:00+05:30
   phases:
-  - phase: phase 2
+  - phase: phase C
     tasks:
-    - name: C crt
+    - name: "1.2"
       type: xlrelease.CreateReleaseTask
-      newReleaseTitle: CRT test 1
-      template: root/folder A/folder B/Template B
-      folder: root/folder A/folder B
-    - name: "1_3"
+      newReleaseTitle: crt_1_2
+      template: Folder A/Folder B/Template B
+      folder: Folder A/Folder B
+    - name: "1.3"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_1_3
-      template: root/folder A/folder B2/Template B2
-      folder: root/folder A/folder B2
-    - name: "1_4"
+      template: Folder A/Folder B2/Template B2
+      folder: Folder A/Folder B2
+    - name: "1.4"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_1_4
-      template: root/folder A2/Template A2
-      folder: root/folder A2
-    - name: "1_7"
+      template: Folder A2/Template A2
+      folder: Folder A2
+    - name: "1.5"
       type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_7
-      template: root/folder A/folder B/Template B
-      folder: root/folder A/folder B
-    - name: "1_8"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_8
-      template: root/folder A2/Template A2
-      folder: root/folder A2
-    - name: "1_11"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_11
-      folder: ./
+      newReleaseTitle: crt_1_5
+      template: Folder A/Folder B/Template B
+      folder: Folder A/Folder B
     color: "#3d6c9e"
-  variables:
-  - type: xlrelease.StringVariable
-    key: templateVar
-    value: FolderA/FolderB/templateB
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
-  extensions:
-  - name: Dashboard
-    type: xlrelease.Dashboard
-    owner: admin
-    tiles:
-    - name: Release progress
-      type: xlrelease.ReleaseProgressTile
-    - name: Release summary
-      type: xlrelease.ReleaseSummaryTile
-      row: 1
-    - name: Resource usage
-      type: xlrelease.ResourceUsageTile
-      row: 4
-    - name: Release timeline
-      type: xlrelease.TimelineTile
-      row: 3
-    - name: Release health
-      type: xlrelease.ReleaseHealthTile
-    - name: Release automation
-      type: xlrelease.ReleaseAutomationTile
-      row: 4
-    - name: Release timeline
-      type: xlrelease.TimelineTile
-      row: 2
-    - name: Release summary
-      type: xlrelease.ReleaseSummaryTile
-    - name: Deployment activity
-      type: deployment.DeploymentsActivityTile
-      row: 5
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: root/folder A/folder B2
-      - type: xlrelease.DateFilter
   riskProfile: Default risk profile
   author: admin
