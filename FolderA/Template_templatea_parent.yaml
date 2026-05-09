@@ -1,0 +1,25 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.1.2-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Folder A
+spec:
+- template: templateA_parent
+  scheduledStartDate: 2026-05-09T09:00:00+05:30
+  phases:
+  - phase: phase A
+    tasks:
+    - name: "1.1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_1
+      template: ./Folder B/Template B
+      folder: ./Folder B
+    color: "#3d6c9e"
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_templateA_parent_scriptUserPassword"
+  riskProfile: Default risk profile
+  author: admin
