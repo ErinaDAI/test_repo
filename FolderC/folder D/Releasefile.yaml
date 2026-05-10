@@ -8,4 +8,3 @@ spec:
   imports:
   - Notifications.yaml
   - Templates.yaml
-  - Triggers.yaml

@@ -94,5 +94,13 @@ spec:
       - type: xlrelease.FolderFilter
         folder: Folder A/Folder B
       - type: xlrelease.DateFilter
+    - name: Deployment activity
+      type: deployment.DeploymentsActivityTile
+      row: 5
+      col: 0
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+      - type: xlrelease.DateFilter
   riskProfile: Default risk profile
   author: admin
