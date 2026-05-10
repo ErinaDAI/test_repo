@@ -42,8 +42,41 @@ spec:
       type: xlrelease.CreateReleaseTask
       template: ../Template B
       folder: ..
+    - name: "1.11"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_11
+      folder: ./
     color: "#3d6c9e"
+  variables:
+  - type: xlrelease.StringVariable
+    key: templateVar
+    value: Template B
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
+  extensions:
+  - name: Dashboard
+    type: xlrelease.Dashboard
+    owner: admin
+    tiles:
+    - name: Release progress
+      type: xlrelease.ReleaseProgressTile
+    - name: Release summary
+      type: xlrelease.ReleaseSummaryTile
+    - name: Resource usage
+      type: xlrelease.ResourceUsageTile
+    - name: Release timeline
+      type: xlrelease.TimelineTile
+    - name: Release health
+      type: xlrelease.ReleaseHealthTile
+    - name: Release automation
+      type: xlrelease.ReleaseAutomationTile
+    - name: Deployment activity
+      type: deployment.DeploymentsActivityTile
+      row: 3
+      col: 0
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ../../Folder B2
+      - type: xlrelease.DateFilter
   riskProfile: Default risk profile
   author: admin
