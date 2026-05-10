@@ -6,5 +6,8 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
+  - Connections.yaml
   - Notifications.yaml
-  - Template_templatea_parent.yaml
+  - Template_template_c.yaml
+  - Trigger_trigger_3_1.yaml
+  - Trigger_trigger_3_2.yaml
