@@ -54,13 +54,17 @@ spec:
     - name: "5_2"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_5_2
-      template: ../Template B
       folder: ..
     - name: "5_3"
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt_5_3
       template: ../../Folder B2/Template B2
       folder: ../../Folder B2
+    - name: "5_4"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_4
+      template: Folder A2/Template A2
+      folder: Folder A2
     color: "#3d6c9e"
   variables:
   - type: xlrelease.StringVariable

@@ -8,19 +8,6 @@ metadata:
   path: Folder B
   home: Folder A/Folder B
 spec:
-- template: Template B
-  scheduledStartDate: 2026-05-09T09:00:00+05:30
-  dueDate: 2026-05-09T10:00:00+05:30
-  phases:
-  - phase: phase B
-    tasks:
-    - name: New task
-      type: xlrelease.Task
-    color: "#3d6c9e"
-  scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Template_B_scriptUserPassword"
-  riskProfile: Default risk profile
-  author: admin
 - template: TemplateB_crt
   scheduledStartDate: 2026-05-09T09:00:00+05:30
   dueDate: 2026-05-09T10:00:00+05:30
