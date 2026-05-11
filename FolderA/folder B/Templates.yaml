@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: Template B
   scheduledStartDate: 2026-05-09T09:00:00+05:30
+  dueDate: 2026-05-09T10:00:00+05:30
   phases:
   - phase: phase B
     tasks:
@@ -22,6 +23,7 @@ spec:
   author: admin
 - template: TemplateB_crt
   scheduledStartDate: 2026-05-09T09:00:00+05:30
+  dueDate: 2026-05-09T10:00:00+05:30
   phases:
   - phase: phase Bcrt
     tasks:
