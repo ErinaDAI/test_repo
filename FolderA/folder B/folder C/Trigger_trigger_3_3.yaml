@@ -8,13 +8,14 @@ metadata:
   path: Folder B/Folder C
   home: Folder A/Folder B/Folder C
 spec:
-- name: trigger_3.2
+- name: trigger_3.3
   type: time.Schedule
-  releaseTitle: trigger2
+  releaseTitle: trigger3
   variables:
   - type: xlrelease.StringVariable
     key: templateVar
     value: Template B
   template: Template C
-  releaseFolder: Folder A2
+  releaseFolder: ..
   periodicity: 0 * * * * *
+  triggerTime: 2026-05-11T08:02:00.152000
