@@ -6,8 +6,8 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: Folder A
+  path: Folder B2
+  home: Folder A/Folder B2
 spec:
 - notifications:
   - notification: TASK_OVERDUE
