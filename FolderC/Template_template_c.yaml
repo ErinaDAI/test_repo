@@ -1,5 +1,6 @@
 # Exported from:        http://erina:5516/
-# Release version:      26.1.2-SNAPSHOT
+# Release version:      25.3.5-SNAPSHOT
+# Date created:         Thu May 14 14:53:01 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -9,132 +10,17 @@ metadata:
   home: Folder A/Folder B/Folder C
 spec:
 - template: Template C
-  scheduledStartDate: 2026-05-09T09:00:00+05:30
-  dueDate: 2026-05-09T10:00:00+05:30
+  scheduledStartDate: 2026-05-14T09:00:00+05:30
   phases:
   - phase: phase C
     tasks:
-    - name: "1.2"
+    - name: "5.6"
       type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_2
-      folder: Folder A/Folder B
-    - name: "1.3"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_3
-      template: Folder A/Folder B2/Template B2
-      folder: Folder A/Folder B2
-    - name: "1.4"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_4
-      template: Folder A2/Template A2
-      folder: Folder A2
-    - name: "1.5"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_5
-      folder: Folder A/Folder B
-    - name: "1.6"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_6
-      template: Folder A/Folder B2/Template B2
-      folder: Folder A/Folder B2
-    - name: "1.7"
-      type: xlrelease.CreateReleaseTask
-      folder: Folder A/Folder B
-    - name: "1.11"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_1_11
-      folder: ./
-    - name: "5.1"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_1
-      folder: Folder A/Folder B
-    - name: New task
-      type: xlrelease.CreateReleaseTask
-      folder: ./
-    - name: "5_2"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_2
-      folder: Folder A/Folder B
-    - name: "5_3"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_3
-      template: Folder A/Folder B2/Template B2
-      folder: Folder A/Folder B2
-    - name: "5_4"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_4
-      template: Folder A2/Template A2
-      folder: Folder A2
-    - name: "5_5"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_5
-      template: Folder A/Folder B/Template B
-      folder: Folder A/Folder B
-    - name: "5_5_1"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_5_1
-      template: Folder A2/Template A2
-      folder: Folder A2
-    - name: "5_6_1"
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: crt_5_6_1
+      newReleaseTitle: crt_5_6
       template: Folder A/Folder B/Template B
       folder: Folder A/Folder B
     color: "#3d6c9e"
-  variables:
-  - type: xlrelease.StringVariable
-    key: templateVar
-    value: Template B
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Template_C_scriptUserPassword"
-  extensions:
-  - name: Dashboard
-    type: xlrelease.Dashboard
-    owner: admin
-    tiles:
-    - name: Release progress
-      type: xlrelease.ReleaseProgressTile
-    - name: Release summary
-      type: xlrelease.ReleaseSummaryTile
-    - name: Resource usage
-      type: xlrelease.ResourceUsageTile
-    - name: Release timeline
-      type: xlrelease.TimelineTile
-    - name: Release health
-      type: xlrelease.ReleaseHealthTile
-    - name: Release automation
-      type: xlrelease.ReleaseAutomationTile
-    - name: Deployment activity
-      type: deployment.DeploymentsActivityTile
-      row: 3
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: Folder A/Folder B2
-      - type: xlrelease.DateFilter
-    - name: Deployment activity
-      type: deployment.DeploymentsActivityTile
-      row: 3
-      col: 1
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: Folder A2
-      - type: xlrelease.DateFilter
-    - name: Deployment activity
-      type: deployment.DeploymentsActivityTile
-      row: 3
-      col: 2
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: Folder A/Folder B
-      - type: xlrelease.DateFilter
-    - name: Deployment activity
-      type: deployment.DeploymentsActivityTile
-      row: 5
-      col: 0
-      filters:
-      - type: xlrelease.FolderFilter
-        folder: ./
-      - type: xlrelease.DateFilter
   riskProfile: Default risk profile
   author: admin
