@@ -1,0 +1,16 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.1.2-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Folder B/Folder C/Folder D
+  home: Folder A/Folder B/Folder C/Folder D
+spec:
+- name: testD
+  type: git.Repository
+  url: https://github.com/ErinaDAI/test_repo
+  username: ErinaDAI
+  password: !value "git_Repository_testD_password"
+  gitProvider: GITHUB

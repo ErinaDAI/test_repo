@@ -1,0 +1,112 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.1.2-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Folder B/Folder C
+  home: Folder A/Folder B/Folder C
+spec:
+- template: TemplateC
+  scheduledStartDate: 2026-05-19T09:00:00+05:30
+  phases:
+  - phase: phase C
+    tasks:
+    - name: "1.4"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_4
+      template: Folder A2/TemplateA2
+      folder: Folder A2
+    - name: "1.5"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_5
+      template: ../TemplateB
+      folder: ..
+    - name: "1.7"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_7
+      template: ../TemplateB
+      folder: ..
+    - name: "1.8"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_1_8
+      template: Folder A2/TemplateA2
+      folder: Folder A2
+    - name: "4.1"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_4_1
+      template: ../../Folder B2/TemplateB2
+      folder: ../../Folder B2
+    - name: "4.2"
+      type: xlrelease.ScriptTask
+      script: |-
+        def folderRef = "${templateVar}"
+        println folderRef
+    - name: 5.5.1
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_1
+      template: ../TemplateB
+      folder: ..
+    - name: 5.5.2
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_5_2
+      template: Folder A2/TemplateA2
+      folder: Folder A2
+    - name: "5.7"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_7
+      template: ./TemplateC2
+      folder: ./
+    - name: "5.8"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_5_8
+      template: ../../Folder B2/TemplateB2
+      folder: ../../Folder B2
+    color: "#3d6c9e"
+  variables:
+  - type: xlrelease.StringVariable
+    key: templateVar
+    label: Script
+    description: Script
+  extensions:
+  - name: Dashboard
+    type: xlrelease.Dashboard
+    owner: admin
+    tiles:
+    - name: Release progress
+      type: xlrelease.ReleaseProgressTile
+    - name: Release summary
+      type: xlrelease.ReleaseSummaryTile
+    - name: Resource usage
+      type: xlrelease.ResourceUsageTile
+    - name: Release timeline
+      type: xlrelease.TimelineTile
+    - name: Release health
+      type: xlrelease.ReleaseHealthTile
+    - name: Release automation
+      type: xlrelease.ReleaseAutomationTile
+    - name: Deployment activity
+      type: deployment.DeploymentsActivityTile
+      row: 3
+      col: 0
+      filters:
+      - type: xlrelease.DateFilter
+    - name: Deployment activity
+      type: deployment.DeploymentsActivityTile
+      row: 3
+      col: 1
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: Folder A2
+      - type: xlrelease.DateFilter
+    - name: Deployment activity
+      type: deployment.DeploymentsActivityTile
+      row: 3
+      col: 2
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+      - type: xlrelease.DateFilter
+  riskProfile: Default risk profile
+  author: admin

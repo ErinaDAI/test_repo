@@ -5,13 +5,19 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: Folder A
+  path: Folder B/Folder C/Folder D
+  home: Folder A/Folder B/Folder C/Folder D
 spec:
-- template: templateA_parent
+- template: TemplateD
   scheduledStartDate: 2026-05-19T09:00:00+05:30
   phases:
-  - phase: phase A
+  - phase: phase D
+    tasks:
+    - name: "6_3"
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt_6_3
+      template: ../../TemplateB
+      folder: ../..
     color: "#3d6c9e"
   riskProfile: Default risk profile
   author: admin

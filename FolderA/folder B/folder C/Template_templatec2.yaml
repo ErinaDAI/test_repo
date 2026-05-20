@@ -5,13 +5,13 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: Folder A
+  path: Folder B/Folder C
+  home: Folder A/Folder B/Folder C
 spec:
-- template: templateA_parent
-  scheduledStartDate: 2026-05-19T09:00:00+05:30
+- template: TemplateC2
+  scheduledStartDate: 2026-05-21T09:00:00+05:30
   phases:
-  - phase: phase A
+  - phase: phaseC2
     color: "#3d6c9e"
   riskProfile: Default risk profile
   author: admin
