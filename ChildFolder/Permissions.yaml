@@ -1,0 +1,111 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: /
+  home: ParentFolder/ChildFolder
+spec:
+- directory: "."
+  teams:
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit_task_script
+    - trigger#view_trigger
+    - workflow#start_execution
+    - release#edit_task_flag
+    - release#edit_precondition
+    - release#edit_task
+    - release#edit_task_tags
+    - folder#view
+    - release#abort
+    - release#view
+    - trigger#edit_trigger
+    - release#edit_failure_handler
+    - release#edit_task_attachments
+    - release#edit_security
+    - release#task_transition
+    - release#lock_task
+    - release#edit_blackout
+    - release#advance_task_transition
+    - release#start
+    - release#edit_task_input_output_properties
+    - release#edit
+    - workflow#view_execution
+    - workflow#abort_execution
+    - release#reassign_lock_task
+    - app_pipelines#view
+    - release#restart_phase
+    - release#edit_task_dates
+    - release#edit_task_configuration_facet
+    - release#edit_task_description
+    - release#reassign_task
+  - name: QA team
+    users:
+    - admin
+    permissions:
+    - template#edit
+    - folder#edit
+    - folder#view
+    - folder#view_security
+    - template#view
+  - name: dev team
+    users:
+    - admin
+    - adm
+    permissions:
+    - folder#edit_security
+    - folder#edit
+    - folder#view
+    - folder#edit_variables
+    - folder#edit_notifications
+    - template#lock_task
+    - template#view
+    - folder#view_security
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#edit_triggers
+    - template#create_release
+    - template#edit_security
+    - template#edit_precondition
+    - template#edit
+    - template#view
+    - app_pipelines#view
+    - template#lock_task
+    - template#create_release_other_folder
+    - trigger#view_trigger
+    - template#edit_failure_handler
+    - folder#view
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - group#view
+    - folder#view_versions
+    - delivery#edit_tracked_item
+    - dashboard#view
+    - group#edit
+    - folder#generate_configuration
+    - folder#edit_notifications
+    - folder#apply_changes
+    - folder#edit
+    - folder#view_configuration
+    - folder#edit_configuration
+    - app_pipelines#edit
+    - delivery_pattern#view
+    - delivery#view
+    - folder#view
+    - folder#view_security
+    - folder#edit_variables
+    - delivery#edit
+    - folder#edit_security
+    - dashboard#edit
+    - folder#edit_versions
+    - app_pipelines#view
+    - delivery_pattern#edit
