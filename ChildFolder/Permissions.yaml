@@ -9,4 +9,108 @@ metadata:
   home: ParentFolder/ChildFolder
 spec:
 - directory: "."
-  inheritFromParent: true
+  teams:
+  - name: QA team
+    users:
+    - admin
+    permissions:
+    - folder#view_security
+    - template#edit
+    - template#view
+    - folder#view
+    - folder#edit
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit_task_dates
+    - release#view
+    - folder#view
+    - release#edit_task_flag
+    - app_pipelines#view
+    - release#abort
+    - release#edit_blackout
+    - release#edit_task_tags
+    - release#edit_precondition
+    - release#lock_task
+    - release#edit_task_configuration_facet
+    - release#edit_failure_handler
+    - release#advance_task_transition
+    - release#start
+    - release#edit_task_script
+    - release#edit
+    - release#edit_security
+    - workflow#start_execution
+    - release#task_transition
+    - release#restart_phase
+    - release#edit_task_input_output_properties
+    - release#edit_task_attachments
+    - release#edit_task_description
+    - release#reassign_task
+    - trigger#view_trigger
+    - release#edit_task
+    - release#reassign_lock_task
+    - workflow#view_execution
+    - trigger#edit_trigger
+    - workflow#abort_execution
+  - name: dev team
+    users:
+    - adm
+    permissions:
+    - template#create_release_other_folder
+    - folder#view
+    - folder#edit_variables
+    - release#edit
+    - folder#edit_security
+    - release#reassign_lock_task
+    - folder#edit
+    - release#lock_task
+    - template#edit
+    - release#edit_task
+    - template#create_release
+    - release#view
+    - template#edit_precondition
+    - folder#edit_notifications
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#create_release
+    - folder#view
+    - app_pipelines#view
+    - template#lock_task
+    - template#edit
+    - template#edit_failure_handler
+    - template#create_release_other_folder
+    - template#edit_precondition
+    - template#view
+    - template#edit_triggers
+    - template#edit_security
+    - trigger#view_trigger
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - folder#edit_security
+    - folder#edit_notifications
+    - folder#edit_configuration
+    - folder#generate_configuration
+    - delivery_pattern#view
+    - group#view
+    - folder#view
+    - folder#apply_changes
+    - folder#edit
+    - dashboard#view
+    - folder#view_versions
+    - folder#edit_versions
+    - delivery#edit_tracked_item
+    - delivery#edit
+    - folder#edit_variables
+    - delivery_pattern#edit
+    - folder#view_configuration
+    - folder#view_security
+    - dashboard#edit
+    - app_pipelines#view
+    - group#edit
+    - delivery#view
+    - app_pipelines#edit
