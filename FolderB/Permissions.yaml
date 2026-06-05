@@ -9,4 +9,99 @@ metadata:
   home: FolderA/FolderB
 spec:
 - directory: "."
-  inheritFromParent: true
+  teams:
+  - name: dev team
+    users:
+    - adm
+    permissions:
+    - folder#view
+    - release#view
+    - release#edit
+    - template#create_release
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - folder#view
+    - template#edit_precondition
+    - trigger#view_trigger
+    - template#edit_security
+    - template#edit_triggers
+    - template#edit
+    - template#edit_failure_handler
+    - template#create_release
+    - template#create_release_other_folder
+    - template#lock_task
+    - template#view
+    - app_pipelines#view
+  - name: QA team
+    users:
+    - admin
+    permissions:
+    - template#edit_failure_handler
+    - folder#edit
+    - template#view
+    - folder#view
+    - folder#view_security
+    - template#lock_task
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#lock_task
+    - release#view
+    - release#edit_task_configuration_facet
+    - release#advance_task_transition
+    - release#edit_task_tags
+    - release#task_transition
+    - release#edit
+    - release#edit_task
+    - release#edit_task_input_output_properties
+    - release#edit_blackout
+    - release#edit_task_attachments
+    - release#edit_task_flag
+    - folder#view
+    - release#edit_task_script
+    - release#start
+    - release#edit_task_description
+    - workflow#view_execution
+    - release#edit_task_dates
+    - release#reassign_task
+    - release#edit_failure_handler
+    - release#edit_security
+    - app_pipelines#view
+    - release#abort
+    - trigger#view_trigger
+    - trigger#edit_trigger
+    - release#restart_phase
+    - workflow#abort_execution
+    - release#edit_precondition
+    - release#reassign_lock_task
+    - workflow#start_execution
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - folder#edit_notifications
+    - group#view
+    - folder#edit
+    - folder#edit_variables
+    - folder#view_configuration
+    - delivery#edit
+    - folder#view_security
+    - folder#apply_changes
+    - delivery#view
+    - folder#view
+    - folder#edit_security
+    - app_pipelines#view
+    - delivery_pattern#edit
+    - folder#edit_configuration
+    - folder#generate_configuration
+    - folder#view_versions
+    - dashboard#view
+    - delivery_pattern#view
+    - dashboard#edit
+    - folder#edit_versions
+    - app_pipelines#edit
+    - delivery#edit_tracked_item
+    - group#edit
