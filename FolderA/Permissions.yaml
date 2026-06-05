@@ -14,12 +14,12 @@ spec:
     users:
     - test1
     permissions:
-    - folder#view_versions
     - folder#edit_versions
-    - folder#view
-    - folder#view_security
-    - folder#generate_configuration
     - folder#view_configuration
+    - folder#view_versions
+    - folder#view
+    - folder#generate_configuration
+    - folder#view_security
   - name: Folder Owner
     users:
     - admin
@@ -51,14 +51,11 @@ spec:
     users:
     - admin
     permissions:
-    - workflow#start_execution
-    - trigger#edit_trigger
-    - folder#view
+    - release#edit_blackout
     - release#edit_task_description
     - release#task_transition
     - release#edit_task_script
     - release#abort
-    - release#edit_blackout
     - release#edit_task
     - release#edit_task_input_output_properties
     - release#edit_failure_handler
@@ -70,6 +67,7 @@ spec:
     - release#edit_task_flag
     - release#edit_security
     - release#reassign_lock_task
+    - workflow#start_execution
     - trigger#view_trigger
     - release#edit_task_attachments
     - app_pipelines#view
@@ -81,14 +79,8 @@ spec:
     - release#edit_task_configuration_facet
     - release#reassign_task
     - release#start
-  - name: testttt
-    users:
-    - new
-    permissions:
-    - release#edit
-    - release#lock_task
-    - folder#view_configuration
-    - release#view
+    - trigger#edit_trigger
+    - folder#view
   - name: Template Owner
     users:
     - admin
@@ -98,20 +90,26 @@ spec:
     - trigger#view_trigger
     - template#edit_security
     - template#edit_failure_handler
-    - template#edit
     - template#create_release_other_folder
-    - app_pipelines#view
-    - template#edit_precondition
-    - template#view
-    - template#edit_triggers
+    - template#edit
     - template#create_release
+    - template#edit_triggers
+    - template#view
+    - template#edit_precondition
+    - app_pipelines#view
   - name: QA team
     users:
     - admin
     permissions:
-    - folder#edit
     - folder#view
-    - folder#view_security
     - template#view
-    - template#lock_task
     - template#edit_failure_handler
+    - folder#edit
+    - folder#view_security
+    - template#lock_task
+  - name: testttt
+    users:
+    - new
+    permissions:
+    - release#lock_task
+    - folder#view_configuration

@@ -6,6 +6,5 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Connections.yaml
   - Notifications.yaml
   - Permissions.yaml

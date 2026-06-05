@@ -10,100 +10,99 @@ metadata:
 spec:
 - directory: "."
   teams:
-  - name: QA team
-    users:
-    - admin
-    permissions:
-    - template#view
-    - folder#view_security
-    - folder#edit
-    - folder#view
-    - template#edit_failure_handler
-    - template#lock_task
   - name: Release Admin
     users:
     - admin
     permissions:
-    - release#edit_failure_handler
-    - release#lock_task
-    - release#start
-    - app_pipelines#view
-    - release#abort
-    - release#edit_blackout
-    - release#edit_task_flag
-    - release#view
-    - release#edit_precondition
-    - release#edit_task_dates
-    - release#edit_task_input_output_properties
-    - release#edit_security
-    - trigger#view_trigger
     - workflow#view_execution
-    - release#edit
-    - release#restart_phase
-    - trigger#edit_trigger
-    - release#reassign_lock_task
-    - release#task_transition
-    - release#edit_task_attachments
-    - release#edit_task_tags
-    - release#edit_task_script
-    - release#reassign_task
-    - release#edit_task_description
-    - release#edit_task
-    - release#edit_task_configuration_facet
+    - release#edit_task_dates
+    - app_pipelines#view
+    - folder#view
+    - release#abort
     - release#advance_task_transition
+    - release#edit
+    - release#edit_blackout
+    - release#edit_failure_handler
+    - release#edit_precondition
+    - release#edit_security
+    - release#edit_task
+    - release#edit_task_attachments
+    - release#edit_task_configuration_facet
+    - release#edit_task_description
+    - release#edit_task_flag
+    - release#edit_task_input_output_properties
+    - release#edit_task_script
+    - release#edit_task_tags
+    - release#lock_task
+    - release#reassign_lock_task
+    - release#reassign_task
+    - release#restart_phase
+    - release#start
+    - release#task_transition
+    - release#view
+    - trigger#edit_trigger
+    - trigger#view_trigger
     - workflow#abort_execution
     - workflow#start_execution
-    - folder#view
   - name: ops team
     users:
     - adm
+    - new
     permissions:
-    - release#reassign_lock_task
-    - release#advance_task_transition
-    - release#task_transition
-    - workflow#view_execution
-    - release#edit_task
-    - release#lock_task
+    - folder#edit
+    - folder#view
+    - folder#view_security
+    - template#view
+  - name: QA team
+    users:
+    - admin
+    permissions:
+    - template#edit_failure_handler
+    - template#lock_task
+    - template#view
+    - folder#view
+    - folder#view_security
+    - folder#edit
   - name: Folder Owner
     users:
     - admin
     permissions:
-    - delivery#view
-    - folder#view
-    - folder#edit_notifications
-    - folder#edit_variables
-    - dashboard#edit
-    - folder#view_configuration
-    - delivery#edit_tracked_item
-    - dashboard#view
-    - folder#edit_configuration
-    - folder#edit_versions
-    - folder#view_versions
-    - folder#view_security
-    - delivery#edit
     - group#view
-    - group#edit
-    - delivery_pattern#view
-    - folder#edit_security
-    - folder#edit
-    - delivery_pattern#edit
-    - app_pipelines#view
-    - app_pipelines#edit
-    - folder#apply_changes
     - folder#generate_configuration
+    - folder#view
+    - folder#view_configuration
+    - folder#view_security
+    - folder#view_versions
+    - group#edit
+    - app_pipelines#edit
+    - app_pipelines#view
+    - dashboard#edit
+    - dashboard#view
+    - delivery#edit
+    - delivery#edit_tracked_item
+    - delivery#view
+    - delivery_pattern#edit
+    - delivery_pattern#view
+    - folder#apply_changes
+    - folder#edit
+    - folder#edit_configuration
+    - folder#edit_notifications
+    - folder#edit_security
+    - folder#edit_variables
+    - folder#edit_versions
   - name: Template Owner
     users:
     - admin
     permissions:
+    - app_pipelines#view
+    - folder#view
+    - template#create_release
+    - template#create_release_other_folder
+    - template#edit
+    - template#edit_failure_handler
+    - template#edit_precondition
+    - template#edit_security
+    - template#edit_triggers
+    - template#lock_task
     - template#view
     - trigger#view_trigger
-    - template#edit
-    - template#lock_task
-    - template#create_release
-    - app_pipelines#view
-    - template#create_release_other_folder
-    - template#edit_failure_handler
-    - template#edit_triggers
-    - template#edit_security
-    - folder#view
-    - template#edit_precondition
