@@ -9,4 +9,91 @@ metadata:
   home: FolderA/FolderB
 spec:
 - directory: "."
-  inheritFromParent: true
+  teams:
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#edit_precondition
+    - folder#view
+    - template#edit_failure_handler
+    - app_pipelines#view
+    - template#lock_task
+    - template#create_release_other_folder
+    - template#edit_triggers
+    - template#view
+    - template#edit_security
+    - trigger#view_trigger
+    - template#create_release
+    - template#edit
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - delivery_pattern#edit
+    - delivery_pattern#view
+    - delivery#edit
+    - dashboard#view
+    - folder#view
+    - folder#view_versions
+    - delivery#view
+    - folder#edit
+    - folder#edit_security
+    - dashboard#edit
+    - group#edit
+    - app_pipelines#view
+    - folder#generate_configuration
+    - app_pipelines#edit
+    - folder#apply_changes
+    - folder#edit_variables
+    - folder#view_configuration
+    - delivery#edit_tracked_item
+    - folder#edit_configuration
+    - group#view
+    - folder#view_security
+    - folder#edit_notifications
+    - folder#edit_versions
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit_task
+    - workflow#start_execution
+    - release#edit_failure_handler
+    - workflow#view_execution
+    - release#edit_task_input_output_properties
+    - release#edit_task_description
+    - folder#view
+    - release#view
+    - release#edit_precondition
+    - release#edit_task_attachments
+    - release#edit_task_tags
+    - release#edit_security
+    - release#abort
+    - trigger#view_trigger
+    - trigger#edit_trigger
+    - release#reassign_lock_task
+    - release#start
+    - release#edit_task_flag
+    - release#edit_task_dates
+    - release#edit_task_configuration_facet
+    - release#edit
+    - workflow#abort_execution
+    - release#task_transition
+    - release#lock_task
+    - release#restart_phase
+    - app_pipelines#view
+    - release#advance_task_transition
+    - release#reassign_task
+    - release#edit_blackout
+    - release#edit_task_script
+  - name: QA team
+    users:
+    - admin
+    permissions:
+    - template#view
+    - template#edit_failure_handler
+    - folder#view_security
+    - folder#edit
+    - folder#view
+    - template#lock_task
