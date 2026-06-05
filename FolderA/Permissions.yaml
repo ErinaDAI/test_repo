@@ -1,0 +1,117 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: /
+  home: FolderA
+spec:
+- directory: "."
+  teams:
+  - name: test1
+    users:
+    - test1
+    permissions:
+    - folder#view_versions
+    - folder#edit_versions
+    - folder#view
+    - folder#view_security
+    - folder#generate_configuration
+    - folder#view_configuration
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - delivery_pattern#edit
+    - delivery_pattern#view
+    - folder#generate_configuration
+    - folder#view_security
+    - folder#edit
+    - folder#edit_notifications
+    - delivery#view
+    - delivery#edit_tracked_item
+    - dashboard#view
+    - folder#apply_changes
+    - group#view
+    - app_pipelines#view
+    - folder#edit_security
+    - folder#view
+    - dashboard#edit
+    - folder#edit_configuration
+    - folder#view_configuration
+    - folder#edit_versions
+    - group#edit
+    - folder#view_versions
+    - app_pipelines#edit
+    - folder#edit_variables
+    - delivery#edit
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - workflow#start_execution
+    - trigger#edit_trigger
+    - folder#view
+    - release#edit_task_description
+    - release#task_transition
+    - release#edit_task_script
+    - release#abort
+    - release#edit_blackout
+    - release#edit_task
+    - release#edit_task_input_output_properties
+    - release#edit_failure_handler
+    - release#edit_task_dates
+    - release#edit_task_tags
+    - release#advance_task_transition
+    - workflow#view_execution
+    - release#edit
+    - release#edit_task_flag
+    - release#edit_security
+    - release#reassign_lock_task
+    - trigger#view_trigger
+    - release#edit_task_attachments
+    - app_pipelines#view
+    - release#lock_task
+    - release#view
+    - release#restart_phase
+    - workflow#abort_execution
+    - release#edit_precondition
+    - release#edit_task_configuration_facet
+    - release#reassign_task
+    - release#start
+  - name: testttt
+    users:
+    - new
+    permissions:
+    - release#edit
+    - release#lock_task
+    - folder#view_configuration
+    - release#view
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - folder#view
+    - template#lock_task
+    - trigger#view_trigger
+    - template#edit_security
+    - template#edit_failure_handler
+    - template#edit
+    - template#create_release_other_folder
+    - app_pipelines#view
+    - template#edit_precondition
+    - template#view
+    - template#edit_triggers
+    - template#create_release
+  - name: QA team
+    users:
+    - admin
+    permissions:
+    - folder#edit
+    - folder#view
+    - folder#view_security
+    - template#view
+    - template#lock_task
+    - template#edit_failure_handler
