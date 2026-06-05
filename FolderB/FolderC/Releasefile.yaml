@@ -3,10 +3,9 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Permissions
-metadata:
-  path: /
-  home: FolderA/FolderB
+kind: Import
 spec:
-- directory: "."
-  inheritFromParent: true
+  imports:
+  - Connections.yaml
+  - Notifications.yaml
+  - Permissions.yaml

@@ -1,0 +1,109 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: FolderC
+  home: FolderA/FolderB/FolderC
+spec:
+- directory: "."
+  teams:
+  - name: QA team
+    users:
+    - admin
+    permissions:
+    - template#view
+    - folder#view_security
+    - folder#edit
+    - folder#view
+    - template#edit_failure_handler
+    - template#lock_task
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit_failure_handler
+    - release#lock_task
+    - release#start
+    - app_pipelines#view
+    - release#abort
+    - release#edit_blackout
+    - release#edit_task_flag
+    - release#view
+    - release#edit_precondition
+    - release#edit_task_dates
+    - release#edit_task_input_output_properties
+    - release#edit_security
+    - trigger#view_trigger
+    - workflow#view_execution
+    - release#edit
+    - release#restart_phase
+    - trigger#edit_trigger
+    - release#reassign_lock_task
+    - release#task_transition
+    - release#edit_task_attachments
+    - release#edit_task_tags
+    - release#edit_task_script
+    - release#reassign_task
+    - release#edit_task_description
+    - release#edit_task
+    - release#edit_task_configuration_facet
+    - release#advance_task_transition
+    - workflow#abort_execution
+    - workflow#start_execution
+    - folder#view
+  - name: ops team
+    users:
+    - adm
+    permissions:
+    - release#reassign_lock_task
+    - release#advance_task_transition
+    - release#task_transition
+    - workflow#view_execution
+    - release#edit_task
+    - release#lock_task
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - delivery#view
+    - folder#view
+    - folder#edit_notifications
+    - folder#edit_variables
+    - dashboard#edit
+    - folder#view_configuration
+    - delivery#edit_tracked_item
+    - dashboard#view
+    - folder#edit_configuration
+    - folder#edit_versions
+    - folder#view_versions
+    - folder#view_security
+    - delivery#edit
+    - group#view
+    - group#edit
+    - delivery_pattern#view
+    - folder#edit_security
+    - folder#edit
+    - delivery_pattern#edit
+    - app_pipelines#view
+    - app_pipelines#edit
+    - folder#apply_changes
+    - folder#generate_configuration
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#view
+    - trigger#view_trigger
+    - template#edit
+    - template#lock_task
+    - template#create_release
+    - app_pipelines#view
+    - template#create_release_other_folder
+    - template#edit_failure_handler
+    - template#edit_triggers
+    - template#edit_security
+    - folder#view
+    - template#edit_precondition
