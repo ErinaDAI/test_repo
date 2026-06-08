@@ -9,4 +9,56 @@ metadata:
   home: FolderA/FolderB
 spec:
 - directory: "."
-  inheritFromParent: true
+  teams:
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - folder#view
+    - template#create_release
+    - template#edit
+    - template#view
+  - name: qa team
+    users:
+    - test1
+    - admin
+    permissions:
+    - template#view
+    - template#edit_precondition
+    - folder#edit_variables
+    - template#edit
+    - release#view
+    - folder#edit_teams
+    - folder#view
+    - template#edit_failure_handler
+    - folder#edit_security
+    - folder#edit
+    - folder#edit_notifications
+    - folder#view_security
+  - name: dev team
+    users:
+    - admin
+    permissions:
+    - template#view
+    - template#edit
+    - folder#view
+    - folder#edit_security
+    - folder#view_security
+    - release#view
+    - folder#edit
+    - release#edit
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#view
+    - release#edit
+    - release#start
+  - name: Folder Owner
+    users:
+    - admin
+    - adm
+    permissions:
+    - folder#apply_changes
+    - folder#edit
+    - folder#view
