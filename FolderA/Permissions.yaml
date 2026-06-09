@@ -14,39 +14,22 @@ spec:
     users:
     - admin
     permissions:
+    - template#view
+    - template#edit
     - template#create_release
-    - template#view
     - folder#view
-    - template#edit
-  - name: qa team
-    users:
-    - test1
-    - admin
-    permissions:
-    - folder#edit_variables
-    - template#edit_failure_handler
-    - template#view
-    - release#view
-    - folder#edit_notifications
-    - folder#edit
-    - template#edit
-    - folder#view
-    - template#edit_precondition
-    - folder#edit_security
-    - folder#edit_teams
-    - folder#view_security
   - name: Release Admin
     users:
     - admin
     permissions:
-    - release#edit
-    - release#view
     - release#start
+    - release#view
+    - release#edit
   - name: Folder Owner
     users:
     - admin
     - adm
     permissions:
-    - folder#view
     - folder#apply_changes
+    - folder#view
     - folder#edit
