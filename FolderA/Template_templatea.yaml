@@ -15,5 +15,6 @@ spec:
     tasks:
     - name: "1"
       type: xlrelease.Task
+      team: qa team
   riskProfile: Default risk profile
   author: admin
