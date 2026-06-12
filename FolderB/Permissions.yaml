@@ -10,55 +10,106 @@ metadata:
 spec:
 - directory: "."
   teams:
-  - name: Template Owner
-    users:
-    - admin
-    permissions:
-    - folder#view
-    - template#create_release
-    - template#edit
-    - template#view
   - name: qa team
     users:
-    - test1
-    - admin
+    - tester
     permissions:
+    - folder#view
+    - app_pipelines#edit
+    - folder#view_configuration
+    - folder#view_security
+    - release#view
     - template#view
-    - template#edit_precondition
+    - folder#edit
     - folder#edit_variables
     - template#edit
-    - release#view
-    - folder#edit_teams
-    - folder#view
-    - template#edit_failure_handler
-    - folder#edit_security
-    - folder#edit
-    - folder#edit_notifications
-    - folder#view_security
-  - name: dev team
-    users:
-    - admin
-    permissions:
-    - template#view
-    - template#edit
-    - folder#view
-    - folder#edit_security
-    - folder#view_security
-    - release#view
-    - folder#edit
-    - release#edit
+    - delivery_pattern#view
+    - folder#view_versions
+    - folder#edit_versions
   - name: Release Admin
     users:
     - admin
     permissions:
     - release#view
+    - release#reassign_task
+    - release#reassign_lock_task
+    - release#edit_blackout
+    - release#edit_task_attachments
+    - release#edit_failure_handler
+    - release#edit_task_tags
+    - release#edit_task_script
+    - release#edit_task_description
+    - release#edit_task
+    - workflow#view_execution
+    - trigger#view_trigger
+    - release#edit_precondition
+    - folder#view
+    - release#edit_task_flag
     - release#edit
+    - release#edit_task_dates
+    - trigger#edit_trigger
+    - release#edit_security
+    - release#lock_task
+    - release#restart_phase
+    - release#edit_task_input_output_properties
+    - workflow#abort_execution
+    - release#edit_task_configuration_facet
+    - app_pipelines#view
+    - release#advance_task_transition
+    - release#abort
+    - release#task_transition
     - release#start
+    - workflow#start_execution
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#create_release_other_folder
+    - app_pipelines#view
+    - template#edit_security
+    - trigger#view_trigger
+    - template#edit
+    - template#edit_failure_handler
+    - template#lock_task
+    - template#edit_triggers
+    - template#create_release
+    - template#edit_precondition
+    - folder#view
+    - template#view
   - name: Folder Owner
     users:
     - admin
-    - adm
     permissions:
-    - folder#apply_changes
-    - folder#edit
+    - folder#edit_configuration
+    - delivery_pattern#view
+    - delivery_pattern#edit
+    - folder#edit_versions
+    - dashboard#view
+    - delivery#edit
+    - folder#view_versions
+    - folder#generate_configuration
     - folder#view
+    - folder#edit
+    - folder#view_security
+    - folder#apply_changes
+    - folder#view_configuration
+    - folder#edit_notifications
+    - group#edit
+    - delivery#view
+    - folder#edit_security
+    - delivery#edit_tracked_item
+    - app_pipelines#view
+    - app_pipelines#edit
+    - group#view
+    - dashboard#edit
+  - name: dev
+    users:
+    - tester
+    - admin
+    permissions:
+    - folder#view
+    - folder#edit_variables
+    - template#edit_precondition
+    - template#edit
+    - release#edit
+    - folder#edit_security
