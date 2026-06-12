@@ -10,106 +10,95 @@ metadata:
 spec:
 - directory: "."
   teams:
-  - name: qa team
-    users:
-    - tester
-    permissions:
-    - folder#view
-    - app_pipelines#edit
-    - folder#view_configuration
-    - folder#view_security
-    - release#view
-    - template#view
-    - folder#edit
-    - folder#edit_variables
-    - template#edit
-    - delivery_pattern#view
-    - folder#view_versions
-    - folder#edit_versions
   - name: Release Admin
     users:
     - admin
     permissions:
-    - release#view
-    - release#reassign_task
-    - release#reassign_lock_task
-    - release#edit_blackout
-    - release#edit_task_attachments
-    - release#edit_failure_handler
-    - release#edit_task_tags
-    - release#edit_task_script
-    - release#edit_task_description
-    - release#edit_task
-    - workflow#view_execution
     - trigger#view_trigger
-    - release#edit_precondition
-    - folder#view
-    - release#edit_task_flag
-    - release#edit
-    - release#edit_task_dates
+    - release#edit_blackout
+    - workflow#view_execution
     - trigger#edit_trigger
-    - release#edit_security
-    - release#lock_task
-    - release#restart_phase
     - release#edit_task_input_output_properties
-    - workflow#abort_execution
+    - release#edit_task_tags
+    - release#view
+    - release#lock_task
     - release#edit_task_configuration_facet
-    - app_pipelines#view
-    - release#advance_task_transition
-    - release#abort
-    - release#task_transition
-    - release#start
+    - release#edit_task_attachments
+    - release#edit_task_script
     - workflow#start_execution
+    - release#edit_task_flag
+    - workflow#abort_execution
+    - release#edit_task_dates
+    - release#edit_task_description
+    - release#edit_security
+    - release#advance_task_transition
+    - folder#view
+    - release#edit_task
+    - release#reassign_lock_task
+    - release#edit_precondition
+    - release#abort
+    - release#reassign_task
+    - release#task_transition
+    - release#edit
+    - app_pipelines#view
+    - release#restart_phase
+    - release#edit_failure_handler
+    - release#start
+  - name: qa team
+    users:
+    - tester
+    permissions:
+    - folder#edit_versions
+    - release#view
+    - folder#view_versions
+    - folder#view_configuration
+    - folder#edit_variables
+    - folder#view_security
+    - folder#edit
+    - template#view
+    - folder#view
+    - template#edit
+    - delivery_pattern#view
+    - app_pipelines#edit
   - name: Template Owner
     users:
     - admin
     permissions:
-    - template#create_release_other_folder
-    - app_pipelines#view
-    - template#edit_security
-    - trigger#view_trigger
     - template#edit
-    - template#edit_failure_handler
-    - template#lock_task
-    - template#edit_triggers
-    - template#create_release
     - template#edit_precondition
     - folder#view
+    - app_pipelines#view
+    - template#edit_security
+    - template#create_release
+    - template#edit_failure_handler
+    - trigger#view_trigger
+    - template#lock_task
     - template#view
+    - template#create_release_other_folder
+    - template#edit_triggers
   - name: Folder Owner
     users:
     - admin
     permissions:
-    - folder#edit_configuration
+    - folder#edit_security
     - delivery_pattern#view
+    - group#view
+    - app_pipelines#view
+    - folder#view_security
+    - folder#edit_notifications
+    - dashboard#edit
     - delivery_pattern#edit
-    - folder#edit_versions
-    - dashboard#view
-    - delivery#edit
-    - folder#view_versions
-    - folder#generate_configuration
     - folder#view
     - folder#edit
-    - folder#view_security
     - folder#apply_changes
-    - folder#view_configuration
-    - folder#edit_notifications
-    - group#edit
+    - folder#edit_configuration
+    - folder#view_versions
+    - folder#edit_versions
+    - folder#generate_configuration
     - delivery#view
-    - folder#edit_security
-    - delivery#edit_tracked_item
-    - app_pipelines#view
+    - dashboard#view
+    - group#edit
     - app_pipelines#edit
-    - group#view
-    - dashboard#edit
-  - name: dev
-    users:
-    - tester
-    - admin
-    permissions:
-    - folder#view
-    - folder#edit_variables
-    - template#edit_precondition
-    - template#edit
-    - release#edit
-    - folder#edit_security
+    - folder#view_configuration
+    - delivery#edit
+    - delivery#edit_tracked_item
