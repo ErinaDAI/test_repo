@@ -10,26 +10,95 @@ metadata:
 spec:
 - directory: "."
   teams:
-  - name: Template Owner
-    users:
-    - admin
-    permissions:
-    - template#view
-    - template#edit
-    - template#create_release
-    - folder#view
   - name: Release Admin
     users:
     - admin
     permissions:
-    - release#start
+    - trigger#view_trigger
+    - release#edit_blackout
+    - workflow#view_execution
+    - trigger#edit_trigger
+    - release#edit_task_input_output_properties
+    - release#edit_task_tags
     - release#view
+    - release#lock_task
+    - release#edit_task_configuration_facet
+    - release#edit_task_attachments
+    - release#edit_task_script
+    - workflow#start_execution
+    - release#edit_task_flag
+    - workflow#abort_execution
+    - release#edit_task_dates
+    - release#edit_task_description
+    - release#edit_security
+    - release#advance_task_transition
+    - folder#view
+    - release#edit_task
+    - release#reassign_lock_task
+    - release#edit_precondition
+    - release#abort
+    - release#reassign_task
+    - release#task_transition
     - release#edit
+    - app_pipelines#view
+    - release#restart_phase
+    - release#edit_failure_handler
+    - release#start
+  - name: qa team
+    users:
+    - tester
+    permissions:
+    - folder#edit_versions
+    - release#view
+    - folder#view_versions
+    - folder#view_configuration
+    - folder#edit_variables
+    - folder#view_security
+    - folder#edit
+    - template#view
+    - folder#view
+    - template#edit
+    - delivery_pattern#view
+    - app_pipelines#edit
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#edit
+    - template#edit_precondition
+    - folder#view
+    - app_pipelines#view
+    - template#edit_security
+    - template#create_release
+    - template#edit_failure_handler
+    - trigger#view_trigger
+    - template#lock_task
+    - template#view
+    - template#create_release_other_folder
+    - template#edit_triggers
   - name: Folder Owner
     users:
     - admin
-    - adm
     permissions:
-    - folder#apply_changes
+    - folder#edit_security
+    - delivery_pattern#view
+    - group#view
+    - app_pipelines#view
+    - folder#view_security
+    - folder#edit_notifications
+    - dashboard#edit
+    - delivery_pattern#edit
     - folder#view
     - folder#edit
+    - folder#apply_changes
+    - folder#edit_configuration
+    - folder#view_versions
+    - folder#edit_versions
+    - folder#generate_configuration
+    - delivery#view
+    - dashboard#view
+    - group#edit
+    - app_pipelines#edit
+    - folder#view_configuration
+    - delivery#edit
+    - delivery#edit_tracked_item
