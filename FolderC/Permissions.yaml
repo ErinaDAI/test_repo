@@ -3,10 +3,10 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Templates
+kind: Permissions
 metadata:
   path: /
   home: FolderA/FolderB/FolderC
 spec:
-- notifications: []
+- directory: "."
   inheritFromParent: true

@@ -1,6 +1,5 @@
 # Exported from:        http://erina:5516/
-# Release version:      25.3.5-SNAPSHOT
-# Date created:         Thu May 14 14:53:01 IST 2026
+# Release version:      26.3.0-SNAPSHOT
 
 ---
 apiVersion: xl-release/v1
@@ -8,4 +7,4 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
-  - Template_template_c.yaml
+  - Permissions.yaml
