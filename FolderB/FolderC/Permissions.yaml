@@ -5,8 +5,8 @@
 apiVersion: xl-release/v1
 kind: Permissions
 metadata:
-  path: /
-  home: FolderA/FolderB
+  path: FolderC
+  home: FolderA/FolderB/FolderC
 spec:
 - directory: "."
   inheritFromParent: true

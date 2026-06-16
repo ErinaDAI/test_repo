@@ -5,8 +5,8 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: FolderA/FolderB
+  path: FolderC
+  home: FolderA/FolderB/FolderC
 spec:
 - notifications:
   - notification: AUDIT_REPORT_JOB_ABORTED
@@ -24,7 +24,6 @@ spec:
 
       **${release.flagComment}**
     roles:
-    - Watcher
     - Release Admin
     - Task Team
   - notification: TASK_OVERDUE
@@ -35,7 +34,6 @@ spec:
 
       After the task is completed, please mark it as Completed in Release.
     roles:
-    - Watcher
     - Release Admin
     - Task Owner
   - notification: MANUAL_TASK_STARTED
@@ -47,8 +45,8 @@ spec:
       After the task is completed, please mark it as Completed in Release.
     roles:
     - Watcher
-    - Task Owner
     - Folder Owner
+    - Task Owner
   - notification: TASK_FAILED
     priority: High
     subject: "[Release] ${release.title}: ${task.title}"
@@ -169,7 +167,6 @@ spec:
 
       Please enter the required information so the release can continue.
     roles:
-    - Watcher
     - Task Team
     - Task Owner
   - notification: AUDIT_REPORT_JOB_COMPLETED
