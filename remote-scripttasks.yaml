@@ -1,0 +1,227 @@
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: remote_task
+spec:
+- template: remote script task validation
+  scheduledStartDate: 2022-02-22T03:30:00Z
+  dueDate: 2022-02-22T04:30:00Z
+  phases:
+  - phase: Unix Script Phase
+    tasks:
+    - name: execute ifconfig
+      type: remoteScript.Unix
+      script: ifconfig
+      address: qe-automation-client.xebialabs.com
+      username: root
+      precondition: "releaseVariables['output_variable_Ipconfig'] == ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.output: "${output_variable_Ifconfig}"
+        pythonScript.password: "${qe_automation_client_password}"
+    - name: execute python script to printNumbers in qe-automation-client
+      type: remoteScript.Unix
+      script: python3 demofile.py
+      remotePath: /root/remote-script-task-folder
+      address: qe-automation-client.xebialabs.com
+      username: root
+      allocateDefaultPty: true
+      precondition: "releaseVariables['output_PrintNumbers_script_Unix'] == ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.password: "${qe_automation_client_password}"
+        pythonScript.output: "${output_PrintNumbers_script_Unix}"
+    - name: execute unix script to printNumbers in qe-automation-client
+      type: remoteScript.Unix
+      script: |-
+        i=1
+        while [ $i -le 60 ]
+        do
+            echo $i
+            i=$(($i+1))
+            sleep 1
+        done
+      remotePath: /root/remote-script-task-folder
+      address: qe-automation-client.xebialabs.com
+      username: root
+      allocateDefaultPty: true
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.password: "${qe_automation_client_password}"
+    - name: check interactive sudo vulnerability issue
+      type: remoteScript.Unix
+      script: sudo -i echo "Password:"
+      address: qe-automation-client.xebialabs.com
+      username: root
+      sudoUsername: root
+      connectionType: INTERACTIVE_SUDO
+      description: |-
+        This task is to verify one of the security issue regarding FI-1082.
+        Password is getting leaked when we use interactive sudo.
+      precondition: "releaseVariables['output_interactive_sudo_task'] == ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.output: "${output_interactive_sudo_task}"
+        pythonScript.password: "${qe_automation_client_password}"
+    color: '#3d6c9e'
+  - phase: Windows Phase
+    tasks:
+    - name: execute ipconfig in windows
+      type: remoteScript.Windows
+      script: ipconfig
+      address: 172.18.60.118
+      username: Administrator
+      precondition: "releaseVariables['output_variable_Ipconfig'] == ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.output: "${output_variable_Ipconfig}"
+        pythonScript.password: "${qe_windows_22_password}"
+    - name: execute systeminfo
+      type: remoteScript.Windows
+      script: systeminfo
+      address: 172.18.60.118
+      username: Administrator
+      precondition: "releaseVariables['output_variable_systeminfo_windows'] == ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.password: "${qe_windows_22_password}"
+        pythonScript.output: "${output_variable_systeminfo_windows}"
+    - name: execute printNumbers script
+      type: remoteScript.Windows
+      script: python demoFile.py
+      remotePath: C:\remote-scriptTask
+      address: 172.18.60.118
+      username: Administrator
+      precondition: "releaseVariables['output_PrintNumbers_script_windows'] == ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.output: "${output_PrintNumbers_script_windows}"
+        pythonScript.password: "${qe_windows_22_password}"
+    color: '#3d6c9e'
+  - phase: Windows(SMB) Phase
+    tasks:
+    - name: execute ipconfig in windows(smb)
+      type: remoteScript.WindowsSmb
+      script: ipconfig
+      address: qe-windows-22.xebialabs.com
+      username: Administrator
+      precondition: "releaseVariables['output_variable_Ipconfig_windows(smb)'] ==\
+        \ ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.output: "${output_variable_Ipconfig_windows(smb)}"
+        pythonScript.password: "${qe_windows_22_password}"
+    - name: execute systeminfo in windows(smb)
+      type: remoteScript.WindowsSmb
+      script: systeminfo
+      address: qe-windows-22.xebialabs.com
+      username: Administrator
+      precondition: "releaseVariables['output_variable_systeminfo_windows(smb)'] ==\
+        \ ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.output: "${output_variable_systeminfo_windows(smb)}"
+        pythonScript.password: "${qe_windows_22_password}"
+    - name: execute printNumbers script
+      type: remoteScript.WindowsSmb
+      script: python demoFile.py
+      remotePath: C:\remote-scriptTask
+      address: qe-windows-22.xebialabs.com
+      username: Administrator
+      precondition: "releaseVariables['output_PrintNumbers_script_windows(smb)'] ==\
+        \ ''"
+      failureHandler: |-
+        release = getCurrentRelease()
+        rid = release.id
+        releaseApi.abort(rid, "aborting release from failure handeler as task failed")
+      taskFailureHandlerEnabled: true
+      taskRecoverOp: RUN_SCRIPT
+      variableMapping:
+        pythonScript.password: "${qe_windows_22_password}"
+        pythonScript.output: "${output_PrintNumbers_script_windows(smb)}"
+    color: '#3d6c9e'
+  variables:
+  - type: xlrelease.StringVariable
+    key: output_variable_Ifconfig
+    requiresValue: false
+  - type: xlrelease.StringVariable
+    key: output_PrintNumbers_script_Unix
+    requiresValue: false
+  - type: xlrelease.StringVariable
+    key: output_variable_Ipconfig
+    requiresValue: false
+  - type: xlrelease.StringVariable
+    key: output_variable_systeminfo_windows
+    requiresValue: false
+  - type: xlrelease.StringVariable
+    key: output_PrintNumbers_script_windows
+    requiresValue: false
+  - type: xlrelease.StringVariable
+    key: output_variable_Ipconfig_windows(smb)
+    requiresValue: false
+  - type: xlrelease.StringVariable
+    key: output_variable_systeminfo_windows(smb)
+    requiresValue: false
+  - type: xlrelease.StringVariable
+    key: output_PrintNumbers_script_windows(smb)
+    requiresValue: false
+  - type: xlrelease.PasswordStringVariable
+    key: qe_automation_client_password
+    requiresValue: false
+    value: !value "xlrelease_PasswordStringVariable_qe_automation_client_password_value"
+  - type: xlrelease.PasswordStringVariable
+    key: qe_windows_22_password
+    requiresValue: false
+    value: !value "xlrelease_PasswordStringVariable_qe_windows_22_password_value"
+  - type: xlrelease.StringVariable
+    key: output_interactive_sudo_task
+    requiresValue: false
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_remote_script_task_validation_scriptUserPassword"
+  riskProfile: Default risk profile
