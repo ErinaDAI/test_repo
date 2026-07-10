@@ -8,4 +8,3 @@ spec:
   imports:
   - Notifications.yaml
   - Template_perfect.yaml
-  - Template_test.yaml
