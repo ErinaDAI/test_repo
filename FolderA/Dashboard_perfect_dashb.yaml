@@ -1,0 +1,166 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: FolderA
+spec:
+- name: perfect dashb
+  type: xlrelease.BlankDashboard
+  owner: admin
+  tiles:
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by risk
+    type: live.ReleasesByRiskTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 0
+    col: 4
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Analytics
+    type: xlrelease.AnalyticsCarouselTile
+    row: 2
+    col: 0
+  - name: Getting started
+    type: xlrelease.AnnouncementTile
+    row: 2
+    col: 3
+  - name: Applications
+    type: xlrelease.ApplicationTile
+    row: 4
+    col: 0
+  - name: Avg. release duration
+    type: xlrelease.AvgReleaseDurationTile
+    row: 0
+    col: 6
+  - name: Avg. release duration over time
+    type: xlrelease.AvgReleaseDurationByMonthTile
+    row: 4
+    col: 3
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 0
+    col: 7
+  - name: Completed releases
+    type: xlrelease.CompletedReleasesTile
+    row: 1
+    col: 6
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    row: 1
+    col: 7
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Deployment activity
+    type: deployment.DeploymentsActivityTile
+    row: 2
+    col: 6
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Deployments distribution
+    type: deployment.DeploymentsDistributionTile
+    row: 2
+    col: 7
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    row: 4
+    col: 6
+    filters:
+    - type: xlrelease.DateFilter
+  - name: JIRA issues
+    type: jira.JiraQueryTile
+    row: 4
+    col: 7
+  - name: Longest task type
+    type: xlrelease.LongestTaskTypeTile
+    row: 5
+    col: 6
+  - name: Markdown text
+    type: xlrelease.MarkdownTile
+    row: 6
+    col: 0
+  - name: Number of releases
+    type: xlrelease.ReleasesByMonthTile
+    row: 6
+    col: 2
+  - type: xlrelease.PlaceholderTile
+    row: 5
+    col: 7
+  - name: Release efficiency
+    type: xlrelease.ReleaseEfficiencyTile
+    row: 6
+    col: 5
+  - name: Releases
+    type: xlrelease.ReleaseTile
+    row: 8
+    col: 0
+  - name: Task efficiency
+    type: xlrelease.TaskEfficiencyTile
+    row: 8
+    col: 3
+  - name: Templates
+    type: xlrelease.TemplateTile
+    row: 8
+    col: 5
+  - name: Time spent by task category
+    type: xlrelease.TaskTimeSpentTile
+    row: 10
+    col: 0
+  - name: Top 10 longest phases
+    type: xlrelease.LongestPhasesTile
+    row: 10
+    col: 2
+  - name: Top 10 longest releases
+    type: xlrelease.LongestReleasesTile
+    row: 10
+    col: 5
+  - name: Top 10 longest tasks
+    type: xlrelease.LongestTasksTile
+    row: 12
+    col: 0
+  - name: Top 10 task assignees
+    type: xlrelease.TopTenTaskAssigneeTile
+    row: 12
+    col: 3
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    row: 12
+    col: 6
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Welcome
+    type: xlrelease.WelcomeTile
+    row: 14
+    col: 0
+  - name: Introducing Workflows
+    type: xlrelease.WorkflowTile
+    row: 14
+    col: 3
+  columns: 8

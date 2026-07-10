@@ -8,8 +8,8 @@ metadata:
   path: /
   home: FolderA
 spec:
-- template: API_Validation_Template
-  scheduledStartDate: 2026-07-09T09:00:00+05:30
+- template: perfect
+  scheduledStartDate: 2026-07-10T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
@@ -94,23 +94,31 @@ spec:
     - name: build validation and skip
       type: xlrelease.ScriptTask
       script: |-
-        for taskName in ["Deploy_To_QA", "Smoke_Test"]:
+        r = getCurrentRelease()
 
-            tasks = getCurrentRelease().getTasksByTitle(taskName)
+        for t in r.getAllTasks():
 
-            for t in tasks:
+            try:
 
-                taskApi.skipTask(
-                    t.id,
-                    "Skipping because Jenkins build failed"
-                )
+                if str(t.title) == "Deploy_To_QA":
 
-                print("Skipped: " + t.title)
+                    taskApi.skipTask(
+                        t.id,
+                        "Skipping because Jenkins build failed"
+                    )
+
+                    print("Skipped: " + str(t.title))
+
+            except Exception as e:
+
+                print(e)
     - name: Deploy_To_QA
       type: xlrelease.Task
+      owner: admin
     - name: Smoke_Test
       type: xlrelease.Task
-    - name: validate active task
+      owner: admin
+    - name: validate active tasks
       type: xlrelease.ScriptTask
       script: |-
         tasks = releaseApi.getActiveTasks(release.id)
@@ -125,14 +133,6 @@ spec:
                 print(t)
     - name: activity logs
       type: xlrelease.ScriptTask
-      script: |-
-        logs = activityLogsApi.getActivityLogs(release.id)
-
-        print("Log Count = " + str(len(logs)))
-
-        for log in logs:
-
-            print(log)
     - name: runtime validation
       type: xlrelease.ScriptTask
       script: |-

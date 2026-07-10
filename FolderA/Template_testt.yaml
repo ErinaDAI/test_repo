@@ -8,30 +8,28 @@ metadata:
   path: /
   home: FolderA
 spec:
-- template: templateA
-  scheduledStartDate: 2026-07-09T09:00:00+05:30
+- template: testt
+  scheduledStartDate: 2026-07-10T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
     - name: j1
       type: xlrelease.ScriptTask
-      script: print(release)
+      script: print(dir())
     - name: j2
       type: xlrelease.ScriptTask
-      script: print(releaseApi)
+      script: |-
+        print(releaseApi)
+        print(release)
   - phase: New Phase
     tasks:
     - name: g1
       type: xlrelease.GroovyScriptTask
       ignoreScriptVariableInterpolation: true
-      script: println System.getProperty("java.version")
-    - name: g2
-      type: xlrelease.GroovyScriptTask
-      ignoreScriptVariableInterpolation: true
       script: |-
         println "Release: ${release.title}"
-        println "Release: ${release.title}"
-        println "JavaVersion:" +System.getProperty("java.version")
+        println "Task: ${task.title}"
+        println "Java version : "+System.getProperty("java.version")
   - phase: New Phase
     tasks:
     - name: e
@@ -39,10 +37,5 @@ spec:
       url: https://raw.githubusercontent.com/vijay-pandurangan/repo-for-external-script-task/master/test.py
       username: ErinaDAI
       password: !value "xlrelease_ExternalScriptTask_e_password"
-    - name: e1
-      type: xlrelease.ExternalScriptTask
-      url: https://raw.githubusercontent.com/xebialabs/Project-Purity/refs/heads/master/dataset/xlr/remote_task/remote-scripttasks.yaml?token=GHSAT0AAAAAADZ47N56QRILNAZZS67EMJNO2SQS6XQ
-      username: ErinaDAI
-      password: !value "xlrelease_ExternalScriptTask_e1_password"
   riskProfile: Default risk profile
   author: admin
