@@ -6,8 +6,6 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
-  - Dashboard_perfect_dashb.yaml
   - Notifications.yaml
-  - Template_great.yaml
   - Template_perfect.yaml
-  - Template_testt.yaml
+  - Template_test.yaml
