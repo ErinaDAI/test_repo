@@ -1,0 +1,359 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: FolderA
+spec:
+- template: t1
+  scheduledStartDate: 2026-06-03T09:00:00+05:30
+  phases:
+  - phase: JDK21 SM SB Enabled
+    tasks:
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import os
+        os.stat("/etc/hosts")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: "exec('for line in open(\"/etc/hosts\", \"r\"): print line')"
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        h4x0r1mp0rt = __import__
+        mod = h4x0r1mp0rt('java.security', fromlist=['AccessController'])
+        klass = getattr(mod, 'AccessController')
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().__class__.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print getattr(ReleasesFilters(), 'cl' + 'ass').forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        fn = ReleasesFilters().getClass
+        print fn().forName("org.springframework.security.core.context.SecurityContextHolder
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().getClass().forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print wrap(ReleasesFilters()).class.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import java
+
+        class MyFreeAction():
+           def run(self):
+             print open("/etc/hosts", 'r').read()
+
+        java.lang.Class.forName("java.security.AccessController").getMethod("doPrivileged", None).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+          def run(self):
+            print open("/etc/hosts", 'r').read()
+
+        Class.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read()
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: Fail task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+        asdasasd
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read(
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    color: "#3d6c9e"
+  - phase: JDK21 SM SB Disabled
+    tasks:
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import os
+        os.stat("/etc/hosts")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: "exec('for line in open(\"/etc/hosts\", \"r\"): print line')"
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        h4x0r1mp0rt = __import__
+        mod = h4x0r1mp0rt('java.security', fromlist=['AccessController'])
+        klass = getattr(mod, 'AccessController')
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().__class__.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print getattr(ReleasesFilters(), 'cl' + 'ass').forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        fn = ReleasesFilters().getClass
+        print fn().forName("org.springframework.security.core.context.SecurityContextHolder
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().getClass().forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print wrap(ReleasesFilters()).class.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import java
+
+        class MyFreeAction():
+           def run(self):
+             print open("/etc/hosts", 'r').read()
+
+        java.lang.Class.forName("java.security.AccessController").getMethod("doPrivileged", None).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+          def run(self):
+            print open("/etc/hosts", 'r').read()
+
+        Class.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read()
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: Fail task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+        asdasasd
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read(
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    color: "#3d6c9e"
+  - phase: JDK25 ANTLR disabled
+    tasks:
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import os
+        os.stat("/etc/hosts")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: "exec('for line in open(\"/etc/hosts\", \"r\"): print line')"
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        h4x0r1mp0rt = __import__
+        mod = h4x0r1mp0rt('java.security', fromlist=['AccessController'])
+        klass = getattr(mod, 'AccessController')
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().__class__.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print getattr(ReleasesFilters(), 'cl' + 'ass').forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        fn = ReleasesFilters().getClass
+        print fn().forName("org.springframework.security.core.context.SecurityContextHolder
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().getClass().forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print wrap(ReleasesFilters()).class.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import java
+
+        class MyFreeAction():
+           def run(self):
+             print open("/etc/hosts", 'r').read()
+
+        java.lang.Class.forName("java.security.AccessController").getMethod("doPrivileged", None).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+          def run(self):
+            print open("/etc/hosts", 'r').read()
+
+        Class.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read()
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: Fail task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+        asdasasd
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read(
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    color: "#3d6c9e"
+  - phase: JDK25 ANTLR enabled
+    tasks:
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import os
+        os.stat("/etc/hosts")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: "exec('for line in open(\"/etc/hosts\", \"r\"): print line')"
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        h4x0r1mp0rt = __import__
+        mod = h4x0r1mp0rt('java.security', fromlist=['AccessController'])
+        klass = getattr(mod, 'AccessController')
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().__class__.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print getattr(ReleasesFilters(), 'cl' + 'ass').forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        fn = ReleasesFilters().getClass
+        print fn().forName("org.springframework.security.core.context.SecurityContextHolder
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print ReleasesFilters().getClass().forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from com.xebialabs.xlrelease.api.v1.forms import ReleasesFilters
+        print wrap(ReleasesFilters()).class.forName("org.springframework.security.core.context.SecurityContextHolder")
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        import java
+
+        class MyFreeAction():
+           def run(self):
+             print open("/etc/hosts", 'r').read()
+
+        java.lang.Class.forName("java.security.AccessController").getMethod("doPrivileged", None).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+          def run(self):
+            print open("/etc/hosts", 'r').read()
+
+        Class.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: New task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read()
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    - name: Fail task
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import Class as klazz, Long as blong
+        from java.security import PrivilegedExceptionAction
+        asdasasd
+        class MyFreeAction(PrivilegedExceptionAction):
+         def run(self):
+           print open("/etc/hosts", 'r').read(
+
+        klazz.forName("java.security.AccessController").getMethod("doPrivileged", PrivilegedExceptionAction).invoke(None, MyFreeAction())
+    color: "#3d6c9e"
+  riskProfile: Default risk profile
+  author: admin

@@ -1,0 +1,149 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: FolderA
+spec:
+- template: API_Validation_Template
+  scheduledStartDate: 2026-07-09T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: create release
+      type: xlrelease.GroovyScriptTask
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        xlr {
+
+            release("BusinessFlowRelease") {
+
+                description "Created through Groovy DSL"
+
+                phases {
+
+                    phase("Build") {
+
+                        tasks {
+
+                            manual("Compile") {
+                            }
+
+                            manual("Unit Test") {
+                            }
+                        }
+                    }
+
+                    phase("Deploy") {
+
+                        tasks {
+
+                            manual("Deploy") {
+                            }
+
+                            manual("Smoke Test") {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    - name: validate release
+      type: xlrelease.ScriptTask
+      script: |-
+        releases = releaseApi.searchReleasesByTitle("BusinessFlowRelease")
+
+        print("Found Releases = " + str(len(releases)))
+
+        for r in releases:
+
+            print("Title = " + str(r.title))
+            print("ID = " + str(r.id))
+            print("Status = " + str(r.status))
+    - name: rename release
+      type: xlrelease.ScriptTask
+      script: |-
+        releases = releaseApi.searchReleasesByTitle("BusinessFlowRelease")
+
+        for r in releases:
+
+            print("Old Title = " + r.title)
+
+            r.title = "BusinessFlowRelease_Renamed"
+
+            releaseApi.updateRelease(r)
+
+            print("New Title = " + r.title)
+    - name: validate renamed release
+      type: xlrelease.ScriptTask
+      script: |-
+        releases = releaseApi.searchReleasesByTitle(
+            "BusinessFlowRelease_Renamed"
+        )
+
+        print("Found Releases = " + str(len(releases)))
+
+        for r in releases:
+
+            print("Title = " + r.title)
+            print("ID = " + str(r.id))
+            print("Status = " + str(r.status))
+    - name: build validation and skip
+      type: xlrelease.ScriptTask
+      script: |-
+        for taskName in ["Deploy_To_QA", "Smoke_Test"]:
+
+            tasks = getCurrentRelease().getTasksByTitle(taskName)
+
+            for t in tasks:
+
+                taskApi.skipTask(
+                    t.id,
+                    "Skipping because Jenkins build failed"
+                )
+
+                print("Skipped: " + t.title)
+    - name: Deploy_To_QA
+      type: xlrelease.Task
+    - name: Smoke_Test
+      type: xlrelease.Task
+    - name: validate active task
+      type: xlrelease.ScriptTask
+      script: |-
+        tasks = releaseApi.getActiveTasks(release.id)
+
+        print("Active Tasks = " + str(len(tasks)))
+
+        for t in tasks:
+
+            try:
+                print(t.title)
+            except:
+                print(t)
+    - name: activity logs
+      type: xlrelease.ScriptTask
+      script: |-
+        logs = activityLogsApi.getActivityLogs(release.id)
+
+        print("Log Count = " + str(len(logs)))
+
+        for log in logs:
+
+            print(log)
+    - name: runtime validation
+      type: xlrelease.ScriptTask
+      script: |-
+        from java.lang import System
+
+        print("Java Version = " + System.getProperty("java.version"))
+
+        print("Java Vendor = " +
+              System.getProperty("java.vendor"))
+
+        print("OS Name = " +
+              System.getProperty("os.name"))
+  riskProfile: Default risk profile
+  author: admin

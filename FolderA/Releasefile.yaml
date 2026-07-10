@@ -7,4 +7,7 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
-  - Permissions.yaml
+  - Template_api_validation_template.yaml
+  - Template_t1.yaml
+  - Template_templatea.yaml
+  - Trigger_trigger_re_e_5e1.yaml
