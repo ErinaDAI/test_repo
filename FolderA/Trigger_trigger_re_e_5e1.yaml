@@ -14,4 +14,4 @@ spec:
   template: templateA
   releaseFolder: ./
   periodicity: 0 * * * * *
-  triggerTime: 2026-07-10T11:52:00.057000
+  triggerTime: 2026-07-10T11:53:00.034000
