@@ -7,4 +7,5 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
+  - Template_oohoo.yaml
   - Template_t1.yaml
