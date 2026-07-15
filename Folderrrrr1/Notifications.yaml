@@ -1,0 +1,12 @@
+# Exported from:        https://release-nightly.devops.dev.digitalai.cloud/
+# Release version:      26.3.0-beta.715
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Folderrrrr1
+spec:
+- notifications: []
+  inheritFromParent: true

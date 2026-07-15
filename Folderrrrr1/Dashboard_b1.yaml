@@ -1,0 +1,219 @@
+# Exported from:        https://release-nightly.devops.dev.digitalai.cloud/
+# Release version:      26.3.0-beta.715
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Folderrrrr1
+spec:
+- name: b1
+  type: xlrelease.BlankDashboard
+  owner: nelson.paulraj@digital.ai
+  tiles:
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by risk
+    type: live.ReleasesByRiskTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 0
+    col: 4
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Agility Assets
+    type: versionone.QueryTile
+    row: 2
+    col: 0
+  - name: Analytics
+    type: xlrelease.AnalyticsCarouselTile
+    row: 2
+    col: 1
+  - name: Getting started
+    type: xlrelease.AnnouncementTile
+    row: 4
+    col: 0
+  - name: Applications
+    type: xlrelease.ApplicationTile
+    row: 4
+    col: 3
+  - name: Cluster summary details
+    type: argocd.clusterSummaryTile
+    row: 2
+    col: 4
+  - name: Blue Green Rollout details
+    type: argoRollouts.blueGreenSummaryTile
+    row: 2
+    col: 5
+  - name: Canary Rollout details
+    type: argoRollouts.canarySummaryTile
+    row: 3
+    col: 0
+  - name: Avg. release duration
+    type: xlrelease.AvgReleaseDurationTile
+    row: 3
+    col: 4
+  - name: Avg. release duration over time
+    type: xlrelease.AvgReleaseDurationByMonthTile
+    row: 6
+    col: 0
+  - name: Avg. task duration
+    type: xlrelease.AvgTaskDurationTile
+    row: 3
+    col: 5
+  - name: BlackDuck risk profile
+    type: blackduck.BlackduckRiskProfileTile
+    row: 6
+    col: 3
+  - name: BlackDuck risk trend
+    type: blackduck.BlackduckRiskTrendTile
+    row: 8
+    col: 0
+  - name: CheckmarxOne Scan Summary
+    type: checkmarx.CheckmarxOneSummaryTile
+    row: 6
+    col: 5
+  - name: Completed releases
+    type: xlrelease.CompletedReleasesTile
+    row: 7
+    col: 5
+  - name: Current applications
+    type: deployment.CurrentApplicationsTile
+    row: 8
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+  - name: CxOSA Scan Summary
+    type: checkmarx.CxosaSummaryTile
+    row: 8
+    col: 3
+  - name: CxSAST Scan Summary
+    type: checkmarx.CheckmarxSummaryTile
+    row: 8
+    col: 4
+  - name: Deployment activity
+    type: deployment.DeploymentsActivityTile
+    row: 8
+    col: 5
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Deployments distribution
+    type: deployment.DeploymentsDistributionTile
+    row: 9
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Deployment success rate
+    type: deployment.DeploymentsSuccessRateTile
+    row: 9
+    col: 3
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Fortify On Demand application compliance
+    type: fortifyOnDemand.FortifyOnDemandComplianceTile
+    row: 10
+    col: 0
+  - name: Fortify On Demand version summary
+    type: fortifyOnDemand.FortifyOnDemandSummaryTile
+    row: 10
+    col: 3
+  - name: Fortify SSC application compliance
+    type: fortify.FortifyComplianceTile
+    row: 12
+    col: 0
+  - name: Fortify SSC version summary
+    type: fortify.FortifySummaryTile
+    row: 12
+    col: 2
+  - name: JIRA issues
+    type: jira.JiraQueryTile
+    row: 9
+    col: 4
+  - name: Longest task type
+    type: xlrelease.LongestTaskTypeTile
+    row: 10
+    col: 5
+  - name: Markdown text
+    type: xlrelease.MarkdownTile
+    row: 12
+    col: 4
+  - name: Number of releases
+    type: xlrelease.ReleasesByMonthTile
+    row: 14
+    col: 0
+  - type: xlrelease.PlaceholderTile
+    row: 11
+    col: 2
+  - name: Releases
+    type: xlrelease.ReleaseTile
+    row: 14
+    col: 3
+  - name: SonarCloud analysis summary
+    type: sonarCloud.SonarSummaryTile
+    row: 16
+    col: 0
+  - name: SonarCloud metrics trend per version
+    type: sonarCloud.SonarComplianceTile
+    row: 16
+    col: 2
+  - name: SonarQube analysis summary
+    type: sonar.SonarSummaryTile
+    row: 16
+    col: 4
+  - name: SonarQube metrics trend per version
+    type: sonar.SonarComplianceTile
+    row: 18
+    col: 0
+  - name: Task efficiency
+    type: xlrelease.TaskEfficiencyTile
+    row: 18
+    col: 2
+  - name: Templates
+    type: xlrelease.TemplateTile
+    row: 20
+    col: 0
+  - name: Time spent by task category
+    type: xlrelease.TaskTimeSpentTile
+    row: 18
+    col: 4
+  - name: Top 10 longest phases
+    type: xlrelease.LongestPhasesTile
+    row: 20
+    col: 3
+  - name: Top 10 longest tasks
+    type: xlrelease.LongestTasksTile
+    row: 22
+    col: 0
+  - name: Top 10 task assignees
+    type: xlrelease.TopTenTaskAssigneeTile
+    row: 22
+    col: 3
+  - name: Total deployments
+    type: deployment.TotalDeploymentsTile
+    row: 11
+    col: 5
+    filters:
+    - type: xlrelease.DateFilter
+  - name: Introducing Workflows
+    type: xlrelease.WorkflowTile

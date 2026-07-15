@@ -1,0 +1,10 @@
+# Exported from:        https://release-nightly.devops.dev.digitalai.cloud/
+# Release version:      26.3.0-beta.715
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Dashboard_b1.yaml
+  - Notifications.yaml
