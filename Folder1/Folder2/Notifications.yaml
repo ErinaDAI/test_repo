@@ -3,8 +3,10 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  path: Folder2
+  home: Folder1/Folder2
 spec:
-  imports:
-  - Notifications.yaml
-  - Template_perfect.yaml
+- notifications: []
+  inheritFromParent: true
