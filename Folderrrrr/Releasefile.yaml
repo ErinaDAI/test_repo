@@ -6,6 +6,8 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
+  - Dashboard_folderrrr_dash.yaml
   - Notifications.yaml
+  - Template_cant_find_me_ahahah.yaml
   - Template_testt.yaml
   - Trigger_triggerrererererer.yaml
