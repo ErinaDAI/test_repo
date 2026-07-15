@@ -1,0 +1,16 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Folder1
+spec:
+- name: triggerrerererr
+  type: time.Schedule
+  releaseTitle: re!eA5e by tr!ggerr >_< eehee
+  template: perfect
+  periodicity: 0 * * * * *
+  triggerTime: 2026-07-15T14:51:00.126000
