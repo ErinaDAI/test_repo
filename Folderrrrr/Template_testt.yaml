@@ -1,0 +1,41 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Folder/Folderrrrr
+spec:
+- template: testt
+  scheduledStartDate: 2026-07-10T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: j1
+      type: xlrelease.ScriptTask
+      script: print(dir())
+    - name: j2
+      type: xlrelease.ScriptTask
+      script: |-
+        print(releaseApi)
+        print(release)
+  - phase: New Phase
+    tasks:
+    - name: g1
+      type: xlrelease.GroovyScriptTask
+      ignoreScriptVariableInterpolation: true
+      script: |-
+        println "Release: ${release.title}"
+        println "Task: ${task.title}"
+        println "Java version : "+System.getProperty("java.version")
+  - phase: New Phase
+    tasks:
+    - name: e
+      type: xlrelease.ExternalScriptTask
+      url: https://raw.githubusercontent.com/vijay-pandurangan/repo-for-external-script-task/master/test.py
+      username: ErinaDAI
+      password: !value "xlrelease_ExternalScriptTask_e_password"
+  riskProfile: Default risk profile
+  author: admin
