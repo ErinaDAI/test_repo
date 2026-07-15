@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: testt
   scheduledStartDate: 2026-07-10T09:00:00+05:30
+  dueDate: 2026-07-10T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:

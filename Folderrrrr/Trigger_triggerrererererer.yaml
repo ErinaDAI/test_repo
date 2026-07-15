@@ -13,5 +13,4 @@ spec:
   releaseTitle: re!eA5e by tr!ggerr >_< eehee
   template: testt
   periodicity: 0 * * * * *
-  enabled: false
-  triggerTime: 2026-07-15T12:04:00.141000
+  triggerTime: 2026-07-15T12:39:00.124000
