@@ -7,4 +7,5 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
+  - Template_me.yaml
   - Template_perfect.yaml
