@@ -7,6 +7,5 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
-  - Template_find_meeee.yaml
   - Template_testt.yaml
   - Trigger_triggerrererererer.yaml
