@@ -18,5 +18,10 @@ spec:
       newReleaseTitle: r1
       template: "${folder.parent.temp}"
       folder: ./
+    - name: CRT2
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: r2
+      template: "${folder.parent.temp}"
+      folder: ./
   riskProfile: Default risk profile
   author: admin
