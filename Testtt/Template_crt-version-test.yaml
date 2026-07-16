@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: CRT-Version-Test
   scheduledStartDate: 2026-07-16T09:00:00+05:30
+  dueDate: 2026-07-16T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
@@ -17,11 +18,11 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: rel1
       template: "${folder.parent-template}"
-      folder: ./
+      folder: "${folder.folder-path}"
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: rel2
       template: "${folder.parent-template}"
-      folder: ./
+      folder: "${folder.folder-path}"
   riskProfile: Default risk profile
   author: admin

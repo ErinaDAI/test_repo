@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: Parent-Template
   scheduledStartDate: 2026-07-16T09:00:00+05:30
+  dueDate: 2026-07-16T10:00:00+05:30
   phases:
   - phase: New Phase
   riskProfile: Default risk profile

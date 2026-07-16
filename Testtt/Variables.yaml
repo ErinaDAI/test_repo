@@ -12,3 +12,5 @@ spec:
   - type: xlrelease.StringVariable
     key: folder.parent-template
     value: Parent-Template
+  - type: xlrelease.StringVariable
+    key: folder.folder-path
