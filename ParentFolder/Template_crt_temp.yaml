@@ -17,11 +17,11 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: r1
       template: "${folder.parent.temp}"
-      folder: ./
+      folder: "${folder.Folder.path}"
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: r2
       template: "${folder.parent.temp}"
-      folder: ./
+      folder: "${folder.Folder.path}"
   riskProfile: Default risk profile
   author: admin
