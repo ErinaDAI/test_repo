@@ -15,3 +15,6 @@ spec:
   - type: xlrelease.StringVariable
     key: folder.Folder.path
     value: folder_path
+  - type: xlrelease.StringVariable
+    key: folder.folder.test
+    value: parent folder
