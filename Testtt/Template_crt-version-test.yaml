@@ -18,5 +18,10 @@ spec:
       newReleaseTitle: rel1
       template: "${folder.parent-template}"
       folder: ./
+    - name: CRT2
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: rel2
+      template: "${folder.parent-template}"
+      folder: ./
   riskProfile: Default risk profile
   author: admin
