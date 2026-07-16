@@ -1,0 +1,17 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: parent folder
+spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.parent.temp
+    value: Parent-Template
+  - type: xlrelease.StringVariable
+    key: folder.Folder.path
+    value: folder_path

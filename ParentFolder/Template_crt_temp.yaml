@@ -1,0 +1,22 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: parent folder
+spec:
+- template: crt temp
+  scheduledStartDate: 2026-07-16T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: CRT1
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: r1
+      template: "${folder.parent.temp}"
+      folder: ./
+  riskProfile: Default risk profile
+  author: admin
