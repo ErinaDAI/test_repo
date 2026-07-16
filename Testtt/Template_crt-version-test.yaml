@@ -18,7 +18,7 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: rel1
       template: "${folder.parent-template}"
-      folder: "${folder.folder-path}"
+      folder: ./
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: rel2
