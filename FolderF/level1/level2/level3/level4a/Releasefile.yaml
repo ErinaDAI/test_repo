@@ -1,0 +1,10 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-713.1100
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Notifications.yaml
+  - Template_template4a.yaml
