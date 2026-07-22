@@ -34,5 +34,10 @@ spec:
       newReleaseTitle: release4
       template: ./dummy
       folder: ./
+    - name: crt5
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: release5
+      template: dummy folder/no template ohno
+      folder: dummy folder
   riskProfile: Default risk profile
   author: admin
