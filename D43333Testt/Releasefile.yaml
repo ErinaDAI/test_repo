@@ -9,5 +9,6 @@ spec:
   - Notifications.yaml
   - Permissions.yaml
   - Template_crt-version-test.yaml
+  - Template_dummy.yaml
   - Template_parent-template.yaml
   - Variables.yaml

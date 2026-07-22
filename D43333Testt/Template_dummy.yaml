@@ -8,10 +8,13 @@ metadata:
   path: /
   home: D-43333 testt
 spec:
-- template: Parent-Template
+- template: dummy
   scheduledStartDate: 2026-07-22T09:00:00+05:30
-  dueDate: 2026-07-22T10:00:00+05:30
   phases:
   - phase: New Phase
+    tasks:
+    - name: crtttt
+      type: xlrelease.CreateReleaseTask
+      folder: ./
   riskProfile: Default risk profile
   author: admin
