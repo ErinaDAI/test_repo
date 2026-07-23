@@ -1,6 +1,6 @@
 # Exported from:        http://erina:5516/
 # Release version:      25.3.9-SNAPSHOT
-# Date created:         Thu Jul 23 11:46:31 IST 2026
+# Date created:         Thu Jul 23 11:48:03 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -17,6 +17,11 @@ spec:
     - name: crt1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: release1
+      template: "${folder.parent-template}"
+      folder: "${folder.target-folder}"
+    - name: crt2
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: release2
       template: "${folder.parent-template}"
       folder: "${folder.target-folder}"
   riskProfile: Default risk profile
