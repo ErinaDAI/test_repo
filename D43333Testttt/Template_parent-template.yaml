@@ -1,0 +1,17 @@
+# Exported from:        http://erina:5516/
+# Release version:      25.3.9-SNAPSHOT
+# Date created:         Thu Jul 23 11:46:31 IST 2026
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: D-43333 testttt
+spec:
+- template: Parent-Template
+  scheduledStartDate: 2026-07-23T09:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+  author: admin
