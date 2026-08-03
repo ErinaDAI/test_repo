@@ -1,5 +1,5 @@
 # Exported from:        http://erina:5516/
-# Release version:      26.3.0-SNAPSHOT
+# Release version:      26.1.5-726.130
 
 ---
 apiVersion: xl-release/v1
@@ -11,4 +11,7 @@ spec:
 - folderVariables:
   - type: xlrelease.StringVariable
     key: folder.parent-template
-    value: Parent-Template
+    value: parent-template
+  - type: xlrelease.StringVariable
+    key: folder.target-folder
+    value: testt
