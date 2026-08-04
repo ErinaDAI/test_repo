@@ -1,6 +1,5 @@
 # Exported from:        http://erina:5516/
-# Release version:      25.3.9-726.1600
-# Date created:         Tue Aug 04 11:21:51 IST 2026
+# Release version:      26.1.5-726.130
 
 ---
 apiVersion: xl-release/v1
@@ -19,20 +18,5 @@ spec:
       newReleaseTitle: r1
       template: "${folder.parent-template}"
       folder: "${folder.target-folder}"
-    - name: crt2
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: r2
-      template: "${folder.parent-template}"
-      folder: "${folder.parent-template}"
-    - name: crt3
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: r3
-      template: ./Parent-Template
-      folder: ./
-    - name: crt4
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: r4
-      template: "${folder.parent-template}"
-      folder: ./
   riskProfile: Default risk profile
   author: admin
