@@ -1,5 +1,6 @@
 # Exported from:        http://erina:5516/
-# Release version:      26.1.5-726.130
+# Release version:      25.3.9-726.1600
+# Date created:         Tue Aug 04 11:17:58 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -9,7 +10,7 @@ metadata:
   home: testt
 spec:
 - template: CRT-Version-Test
-  scheduledStartDate: 2026-08-03T09:00:00+05:30
+  scheduledStartDate: 2026-08-04T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
@@ -17,16 +18,6 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: r1
       template: "${folder.parent-template}"
-      folder: "${folder.parent-template}"
-    - name: crt2
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: r2
-      template: "${folder.parent-template}"
       folder: "${folder.target-folder}"
-    - name: crt3
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: r3
-      template: ./Parent-Template
-      folder: D-43333
   riskProfile: Default risk profile
   author: admin
