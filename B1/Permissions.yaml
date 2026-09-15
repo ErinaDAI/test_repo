@@ -9,4 +9,81 @@ metadata:
   home: A/B1
 spec:
 - directory: "."
-  inheritFromParent: true
+  teams:
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#create_release_other_folder
+    - folder#view
+    - template#create_release
+    - app_pipelines#view
+    - template#edit_triggers
+    - template#edit
+    - template#edit_failure_handler
+    - template#edit_precondition
+    - trigger#view_trigger
+    - template#view
+    - template#lock_task
+    - template#edit_security
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#task_transition
+    - release#edit
+    - release#edit_task_configuration_facet
+    - release#advance_task_transition
+    - release#restart_phase
+    - release#start
+    - folder#view
+    - release#edit_task_script
+    - release#edit_precondition
+    - release#abort
+    - release#edit_security
+    - trigger#edit_trigger
+    - release#edit_task_description
+    - release#reassign_lock_task
+    - trigger#view_trigger
+    - workflow#abort_execution
+    - release#edit_blackout
+    - release#view
+    - app_pipelines#view
+    - release#lock_task
+    - release#reassign_task
+    - workflow#start_execution
+    - release#edit_failure_handler
+    - release#edit_task
+    - release#edit_task_flag
+    - release#edit_task_input_output_properties
+    - workflow#view_execution
+    - release#edit_task_attachments
+    - release#edit_task_dates
+    - release#edit_task_tags
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - folder#generate_configuration
+    - folder#edit
+    - folder#edit_configuration
+    - delivery#edit_tracked_item
+    - folder#edit_variables
+    - delivery_pattern#edit
+    - folder#edit_notifications
+    - folder#view_security
+    - folder#edit_versions
+    - group#edit
+    - delivery#edit
+    - group#view
+    - app_pipelines#view
+    - folder#view
+    - folder#apply_changes
+    - dashboard#view
+    - dashboard#edit
+    - delivery_pattern#view
+    - app_pipelines#edit
+    - delivery#view
+    - folder#view_versions
+    - folder#edit_security
+    - folder#view_configuration
