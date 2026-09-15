@@ -1,0 +1,12 @@
+# Exported from:        http://erina:5516/
+# Release version:      26.3.0-901.847
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: C2
+  home: A/B1/C2
+spec:
+- directory: "."
+  inheritFromParent: true
